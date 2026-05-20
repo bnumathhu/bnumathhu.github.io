@@ -19,15 +19,15 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="\---  title: 我的打卡日记  layout: false  \---        &#x20;     &#x20;     &#x20;   个人打卡仪表板 | 运动·睡眠·学习·爱好  &#x20;     &#x20;     &#x20;     &#x20;       \* {  &#x20;           box-sizing: border-box;  &amp;#x2">
+    <meta name="description" content="个人打卡仪表板                   * { box-sizing: border-box; }         body {             background: #f5f7fb;             font-family: &#39;Segoe UI&#39;, Roboto, &#39;Helvetica Neue&#39;, sans-serif;">
 <meta property="og:type" content="website">
 <meta property="og:title" content="page.title">
 <meta property="og:url" content="http://example.com/checkin/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="\---  title: 我的打卡日记  layout: false  \---        &#x20;     &#x20;     &#x20;   个人打卡仪表板 | 运动·睡眠·学习·爱好  &#x20;     &#x20;     &#x20;     &#x20;       \* {  &#x20;           box-sizing: border-box;  &amp;#x2">
+<meta property="og:description" content="个人打卡仪表板                   * { box-sizing: border-box; }         body {             background: #f5f7fb;             font-family: &#39;Segoe UI&#39;, Roboto, &#39;Helvetica Neue&#39;, sans-serif;">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-05-20T17:18:24.894Z">
-<meta property="article:modified_time" content="2026-05-20T17:13:13.117Z">
+<meta property="article:published_time" content="2026-05-20T17:53:21.212Z">
+<meta property="article:modified_time" content="2026-05-20T17:53:21.212Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -326,1211 +326,401 @@
                 
 
 <article class="page-content">
-  \---
-
-title: 我的打卡日记
-
-layout: false
-
-\---
-
-<!DOCTYPE html>
-
+  <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
-
-&#x20;   <meta charset="UTF-8">
-
-&#x20;   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-&#x20;   <title>个人打卡仪表板 | 运动·睡眠·学习·爱好</title>
-
-&#x20;   <!-- Chart.js CDN for charts -->
-
-&#x20;   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-
-&#x20;   <style>
-
-&#x20;       \* {
-
-&#x20;           box-sizing: border-box;
-
-&#x20;       }
-
-&#x20;       body {
-
-&#x20;           background: #f5f7fb;
-
-&#x20;           font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-
-&#x20;           margin: 0;
-
-&#x20;           padding: 24px 16px;
-
-&#x20;           color: #1e293b;
-
-&#x20;       }
-
-&#x20;       .container {
-
-&#x20;           max-width: 1300px;
-
-&#x20;           margin: 0 auto;
-
-&#x20;       }
-
-&#x20;       /\* 卡片通用样式 \*/
-
-&#x20;       .card {
-
-&#x20;           background: white;
-
-&#x20;           border-radius: 28px;
-
-&#x20;           box-shadow: 0 8px 20px rgba(0,0,0,0.03), 0 2px 6px rgba(0,0,0,0.05);
-
-&#x20;           padding: 20px 24px;
-
-&#x20;           margin-bottom: 28px;
-
-&#x20;           transition: all 0.2s ease;
-
-&#x20;       }
-
-&#x20;       h1, h2, h3 {
-
-&#x20;           margin-top: 0;
-
-&#x20;           font-weight: 600;
-
-&#x20;       }
-
-&#x20;       h1 {
-
-&#x20;           font-size: 1.9rem;
-
-&#x20;           background: linear-gradient(135deg, #2b7a62, #4c9f8a);
-
-&#x20;           -webkit-background-clip: text;
-
-&#x20;           background-clip: text;
-
-&#x20;           color: transparent;
-
-&#x20;           margin-bottom: 0.25rem;
-
-&#x20;       }
-
-&#x20;       .sub {
-
-&#x20;           color: #5b6e8c;
-
-&#x20;           border-left: 3px solid #2b7a62;
-
-&#x20;           padding-left: 12px;
-
-&#x20;           margin: 8px 0 16px 0;
-
-&#x20;           font-size: 0.95rem;
-
-&#x20;       }
-
-&#x20;       /\* 网格表单 \*/
-
-&#x20;       .form-grid {
-
-&#x20;           display: grid;
-
-&#x20;           grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-
-&#x20;           gap: 18px;
-
-&#x20;           margin-bottom: 20px;
-
-&#x20;       }
-
-&#x20;       .input-group {
-
-&#x20;           display: flex;
-
-&#x20;           flex-direction: column;
-
-&#x20;           gap: 6px;
-
-&#x20;       }
-
-&#x20;       .input-group label {
-
-&#x20;           font-weight: 500;
-
-&#x20;           font-size: 0.85rem;
-
-&#x20;           color: #2d3e5f;
-
-&#x20;           display: flex;
-
-&#x20;           align-items: center;
-
-&#x20;           gap: 6px;
-
-&#x20;       }
-
-&#x20;       .input-group label i {
-
-&#x20;           font-style: normal;
-
-&#x20;           font-size: 1.1rem;
-
-&#x20;       }
-
-&#x20;       input, select {
-
-&#x20;           padding: 10px 12px;
-
-&#x20;           border: 1px solid #dce3ec;
-
-&#x20;           border-radius: 18px;
-
-&#x20;           font-size: 0.9rem;
-
-&#x20;           background: #fff;
-
-&#x20;           transition: 0.2s;
-
-&#x20;       }
-
-&#x20;       input:focus, select:focus {
-
-&#x20;           outline: none;
-
-&#x20;           border-color: #2b7a62;
-
-&#x20;           box-shadow: 0 0 0 3px rgba(43,122,98,0.1);
-
-&#x20;       }
-
-&#x20;       button {
-
-&#x20;           background: #2b7a62;
-
-&#x20;           color: white;
-
-&#x20;           border: none;
-
-&#x20;           padding: 10px 22px;
-
-&#x20;           border-radius: 40px;
-
-&#x20;           font-weight: 500;
-
-&#x20;           font-size: 0.9rem;
-
-&#x20;           cursor: pointer;
-
-&#x20;           transition: 0.2s;
-
-&#x20;           box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-
-&#x20;       }
-
-&#x20;       button:hover {
-
-&#x20;           background: #1f5e4b;
-
-&#x20;           transform: translateY(-1px);
-
-&#x20;       }
-
-&#x20;       .btn-outline {
-
-&#x20;           background: white;
-
-&#x20;           border: 1px solid #2b7a62;
-
-&#x20;           color: #2b7a62;
-
-&#x20;           box-shadow: none;
-
-&#x20;       }
-
-&#x20;       .btn-outline:hover {
-
-&#x20;           background: #e9f3ef;
-
-&#x20;       }
-
-&#x20;       .stats-row {
-
-&#x20;           display: flex;
-
-&#x20;           flex-wrap: wrap;
-
-&#x20;           gap: 20px;
-
-&#x20;           justify-content: space-between;
-
-&#x20;           align-items: center;
-
-&#x20;       }
-
-&#x20;       .score-board {
-
-&#x20;           background: #eef5f2;
-
-&#x20;           border-radius: 40px;
-
-&#x20;           padding: 12px 24px;
-
-&#x20;           text-align: center;
-
-&#x20;           flex: 1;
-
-&#x20;           min-width: 140px;
-
-&#x20;       }
-
-&#x20;       .score-board .big-score {
-
-&#x20;           font-size: 2.1rem;
-
-&#x20;           font-weight: 800;
-
-&#x20;           color: #1f5e4b;
-
-&#x20;           line-height: 1;
-
-&#x20;       }
-
-&#x20;       .chart-container {
-
-&#x20;           margin-top: 18px;
-
-&#x20;           height: 280px;
-
-&#x20;           position: relative;
-
-&#x20;       }
-
-&#x20;       canvas {
-
-&#x20;           max-height: 260px;
-
-&#x20;           width: 100%;
-
-&#x20;       }
-
-&#x20;       .history-table {
-
-&#x20;           overflow-x: auto;
-
-&#x20;       }
-
-&#x20;       table {
-
-&#x20;           width: 100%;
-
-&#x20;           border-collapse: collapse;
-
-&#x20;           font-size: 0.85rem;
-
-&#x20;       }
-
-&#x20;       th, td {
-
-&#x20;           padding: 10px 8px;
-
-&#x20;           text-align: center;
-
-&#x20;           border-bottom: 1px solid #e9edf2;
-
-&#x20;       }
-
-&#x20;       th {
-
-&#x20;           background: #f8fafc;
-
-&#x20;           font-weight: 600;
-
-&#x20;           color: #2d3e5f;
-
-&#x20;       }
-
-&#x20;       .rating-badge {
-
-&#x20;           background: #e2e8f0;
-
-&#x20;           padding: 4px 8px;
-
-&#x20;           border-radius: 30px;
-
-&#x20;           font-weight: 500;
-
-&#x20;           font-size: 0.75rem;
-
-&#x20;           display: inline-block;
-
-&#x20;       }
-
-&#x20;       .delete-btn {
-
-&#x20;           background: none;
-
-&#x20;           border: none;
-
-&#x20;           color: #c00;
-
-&#x20;           font-size: 1.1rem;
-
-&#x20;           cursor: pointer;
-
-&#x20;           padding: 0 6px;
-
-&#x20;           box-shadow: none;
-
-&#x20;       }
-
-&#x20;       .delete-btn:hover {
-
-&#x20;           background: none;
-
-&#x20;           transform: scale(1.1);
-
-&#x20;           color: #a00;
-
-&#x20;       }
-
-&#x20;       .filter-bar {
-
-&#x20;           display: flex;
-
-&#x20;           flex-wrap: wrap;
-
-&#x20;           justify-content: space-between;
-
-&#x20;           align-items: center;
-
-&#x20;           margin-bottom: 16px;
-
-&#x20;           gap: 12px;
-
-&#x20;       }
-
-&#x20;       .month-picker {
-
-&#x20;           display: flex;
-
-&#x20;           gap: 8px;
-
-&#x20;           align-items: center;
-
-&#x20;       }
-
-&#x20;       footer {
-
-&#x20;           text-align: center;
-
-&#x20;           font-size: 0.75rem;
-
-&#x20;           color: #7c8ba0;
-
-&#x20;           margin-top: 30px;
-
-&#x20;       }
-
-&#x20;       @media (max-width: 680px) {
-
-&#x20;           .card { padding: 16px; }
-
-&#x20;           .stats-row { flex-direction: column; align-items: stretch; }
-
-&#x20;       }
-
-&#x20;   </style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>个人打卡仪表板</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            background: #f5f7fb;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 24px 16px;
+            color: #1e293b;
+        }
+        .container { max-width: 1300px; margin: 0 auto; }
+        .card {
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03), 0 2px 6px rgba(0,0,0,0.05);
+            padding: 20px 24px;
+            margin-bottom: 28px;
+        }
+        h1 {
+            font-size: 1.9rem;
+            background: linear-gradient(135deg, #2b7a62, #4c9f8a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.25rem;
+        }
+        .sub {
+            color: #5b6e8c;
+            border-left: 3px solid #2b7a62;
+            padding-left: 12px;
+            margin: 8px 0 16px 0;
+            font-size: 0.95rem;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 18px;
+            margin-bottom: 20px;
+        }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .input-group label {
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: #2d3e5f;
+        }
+        input, select {
+            padding: 10px 12px;
+            border: 1px solid #dce3ec;
+            border-radius: 18px;
+            font-size: 0.9rem;
+        }
+        button {
+            background: #2b7a62;
+            color: white;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 40px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .btn-outline {
+            background: white;
+            border: 1px solid #2b7a62;
+            color: #2b7a62;
+        }
+        .stats-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+        .score-board {
+            background: #eef5f2;
+            border-radius: 40px;
+            padding: 12px 24px;
+            text-align: center;
+            flex: 1;
+            min-width: 140px;
+        }
+        .score-board .big-score {
+            font-size: 2.1rem;
+            font-weight: 800;
+            color: #1f5e4b;
+        }
+        .chart-container {
+            margin-top: 18px;
+            height: 280px;
+        }
+        canvas { max-height: 260px; width: 100%; }
+        .history-table { overflow-x: auto; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+        th, td {
+            padding: 10px 8px;
+            text-align: center;
+            border-bottom: 1px solid #e9edf2;
+        }
+        th { background: #f8fafc; }
+        .delete-btn {
+            background: none;
+            border: none;
+            color: #c00;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+        .filter-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+        .month-picker { display: flex; gap: 8px; align-items: center; }
+        footer { text-align: center; font-size: 0.75rem; color: #7c8ba0; margin-top: 30px; }
+    </style>
 </head>
-
 <body>
-
 <div class="container">
-
-&#x20;   <div class="card">
-
-&#x20;       <h1 id="📆-多维生活打卡-·-每日精进">📆 多维生活打卡 · 每日精进</h1>
-
-&#x20;       <div class="sub">记录运动🏃 · 睡眠😴 · 饮食🥗 · 学习📚 · 爱好🎸 → 自动评分+积分 + 趋势图表</div>
-
-
-
-&#x20;       <!-- 今日打卡表单 -->
-
-&#x20;       <div class="form-grid" id="todayForm">
-
-&#x20;           <div class="input-group">
-
-&#x20;               <label>📅 日期</label>
-
-&#x20;               <input type="date" id="logDate" required>
-
-&#x20;           </div>
-
-&#x20;           <div class="input-group">
-
-&#x20;               <label>🏃 运动时长 (分钟)</label>
-
-&#x20;               <input type="number" id="sport" value="30" min="0" step="5">
-
-&#x20;           </div>
-
-&#x20;           <div class="input-group">
-
-&#x20;               <label>😴 睡眠时长 (小时)</label>
-
-&#x20;               <input type="number" id="sleep" value="7.5" step="0.5" min="0" max="24">
-
-&#x20;           </div>
-
-&#x20;           <div class="input-group">
-
-&#x20;               <label>🍽️ 饮食质量</label>
-
-&#x20;               <select id="diet">
-
-&#x20;                   <option value="good">🥗 优秀</option>
-
-&#x20;                   <option value="normal" selected>🍚 一般</option>
-
-&#x20;                   <option value="bad">🍔 较差</option>
-
-&#x20;               </select>
-
-&#x20;           </div>
-
-&#x20;           <div class="input-group">
-
-&#x20;               <label>📖 学习/工作 (小时)</label>
-
-&#x20;               <input type="number" id="study" value="2.5" step="0.5" min="0">
-
-&#x20;           </div>
-
-&#x20;           <div class="input-group">
-
-&#x20;               <label>🎨 课余爱好 (小时)</label>
-
-&#x20;               <input type="number" id="hobby" value="1" step="0.5" min="0">
-
-&#x20;           </div>
-
-&#x20;       </div>
-
-&#x20;       <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 8px;">
-
-&#x20;           <button id="saveBtn">✨ 保存今日打卡</button>
-
-&#x20;           <button id="resetBtn" class="btn-outline">🔄 重置表单为今日</button>
-
-&#x20;       </div>
-
-&#x20;       <div style="font-size:0.8rem; color:#5f7d9c;">\* 每次打卡自动计算评分(满分100)并累加积分，积分=每日评分之和。</div>
-
-&#x20;   </div>
-
-
-
-&#x20;   <!-- 积分 \& 今日评分预览 -->
-
-&#x20;   <div class="card">
-
-&#x20;       <div class="stats-row">
-
-&#x20;           <div class="score-board">
-
-&#x20;               <div>🏆 累计积分</div>
-
-&#x20;               <div class="big-score" id="totalPointsDisplay">0</div>
-
-&#x20;           </div>
-
-&#x20;           <div class="score-board">
-
-&#x20;               <div>⭐ 今日预估评分</div>
-
-&#x20;               <div class="big-score" id="previewScore">--</div>
-
-&#x20;           </div>
-
-&#x20;           <div class="score-board">
-
-&#x20;               <div>📈 平均分(总天数)</div>
-
-&#x20;               <div class="big-score" id="avgScoreDisplay">--</div>
-
-&#x20;           </div>
-
-&#x20;       </div>
-
-&#x20;   </div>
-
-
-
-&#x20;   <!-- 图表区域 + 月视图切换 -->
-
-&#x20;   <div class="card">
-
-&#x20;       <div class="filter-bar">
-
-&#x20;           <h3 style="margin:0;">📊 评分趋势</h3>
-
-&#x20;           <div class="month-picker">
-
-&#x20;               <span>📅 视图：</span>
-
-&#x20;               <button id="dailyViewBtn" class="btn-outline" style="background:#2b7a62; color:white; border:none;">日折线</button>
-
-&#x20;               <button id="monthlyViewBtn" class="btn-outline">月均折线</button>
-
-&#x20;               <input type="month" id="monthSelector" value="2025-01" style="width:140px;">
-
-&#x20;           </div>
-
-&#x20;       </div>
-
-&#x20;       <div class="chart-container">
-
-&#x20;           <canvas id="scoreChart"></canvas>
-
-&#x20;       </div>
-
-&#x20;       <p style="font-size:0.75rem; margin-top: 8px;">日视图显示最近30天评分；月视图展示所选月份各天评分</p>
-
-&#x20;   </div>
-
-
-
-&#x20;   <!-- 历史打卡记录表 -->
-
-&#x20;   <div class="card">
-
-&#x20;       <h3>📋 历史打卡明细 <span style="font-weight:normal; font-size:0.8rem;">(点击删除可移除记录，积分自动重算)</span></h3>
-
-&#x20;       <div class="history-table">
-
-&#x20;           <table id="historyTable">
-
-&#x20;               <thead>
-
-&#x20;                   <tr><th>日期</th><th>运动</th><th>睡眠</th><th>饮食</th><th>学习/工作</th><th>爱好</th><th>评分</th><th>积分</th><th>操作</th></tr>
-
-&#x20;               </thead>
-
-&#x20;               <tbody id="historyTbody"></tbody>
-
-&#x20;           </table>
-
-&#x20;       </div>
-
-&#x20;   </div>
-
-&#x20;   <footer>数据存储在浏览器本地 (localStorage)，打卡记录不会丢失。可导出/导入？暂只支持本地可靠存储。</footer>
-
+    <div class="card">
+        <h1 id="📆-多维生活打卡-·-每日精进">📆 多维生活打卡 · 每日精进</h1>
+        <div class="sub">记录运动🏃 · 睡眠😴 · 饮食🥗 · 学习📚 · 爱好🎸 → 自动评分+积分 + 趋势图表</div>
+        <div class="form-grid" id="todayForm">
+            <div class="input-group"><label>📅 日期</label><input type="date" id="logDate" required></div>
+            <div class="input-group"><label>🏃 运动 (分钟)</label><input type="number" id="sport" value="30" min="0" step="5"></div>
+            <div class="input-group"><label>😴 睡眠 (小时)</label><input type="number" id="sleep" value="7.5" step="0.5" min="0" max="24"></div>
+            <div class="input-group"><label>🍽️ 饮食质量</label>
+                <select id="diet"><option value="good">优秀</option><option value="normal" selected>一般</option><option value="bad">较差</option></select>
+            </div>
+            <div class="input-group"><label>📖 学习/工作 (小时)</label><input type="number" id="study" value="2.5" step="0.5" min="0"></div>
+            <div class="input-group"><label>🎨 课余爱好 (小时)</label><input type="number" id="hobby" value="1" step="0.5" min="0"></div>
+        </div>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 8px;">
+            <button id="saveBtn">✨ 保存今日打卡</button>
+            <button id="resetBtn" class="btn-outline">🔄 重置表单为今日</button>
+        </div>
+        <div style="font-size:0.8rem; color:#5f7d9c;">* 每次打卡自动计算评分(满分100)并累加积分，积分=每日评分之和。</div>
+    </div>
+
+    <div class="card">
+        <div class="stats-row">
+            <div class="score-board"><div>🏆 累计积分</div><div class="big-score" id="totalPointsDisplay">0</div></div>
+            <div class="score-board"><div>⭐ 今日预估评分</div><div class="big-score" id="previewScore">--</div></div>
+            <div class="score-board"><div>📈 平均分(总天数)</div><div class="big-score" id="avgScoreDisplay">--</div></div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="filter-bar">
+            <h3 style="margin:0;">📊 评分趋势</h3>
+            <div class="month-picker">
+                <span>📅 视图：</span>
+                <button id="dailyViewBtn" class="btn-outline" style="background:#2b7a62; color:white;">日折线</button>
+                <button id="monthlyViewBtn" class="btn-outline">月均折线</button>
+                <input type="month" id="monthSelector" value="2025-01" style="width:140px;">
+            </div>
+        </div>
+        <div class="chart-container"><canvas id="scoreChart"></canvas></div>
+        <p style="font-size:0.75rem;">日视图显示最近30天评分；月视图展示所选月份各天评分</p>
+    </div>
+
+    <div class="card">
+        <h3>📋 历史打卡明细</h3>
+        <div class="history-table">
+            <table id="historyTable">
+                <thead><tr><th>日期</th><th>运动</th><th>睡眠</th><th>饮食</th><th>学习/工作</th><th>爱好</th><th>评分</th><th>积分</th><th>操作</th></tr></thead>
+                <tbody id="historyTbody"></tbody>
+            </table>
+        </div>
+    </div>
+    <footer>数据存储在浏览器本地 (localStorage)，打卡记录不会丢失。</footer>
 </div>
 
-
-
 <script>
-
-&#x20;   // ---------- 存储 KEY ----------
-
-&#x20;   const STORAGE\_KEY = 'life\_dashboard\_records';
-
-
-
-&#x20;   // 评分算法(满分100)
-
-&#x20;   function computeScore(sportMin, sleepHour, dietVal, studyHour, hobbyHour) {
-
-&#x20;       // 运动: 30分钟得5分，每多10分钟+1，上限15分
-
-&#x20;       let sportScore = Math.min(15, 5 + Math.floor(Math.max(0, sportMin - 30) / 10));
-
-&#x20;       if (sportMin <= 0) sportScore = 0;
-
-&#x20;       // 睡眠: 7\~8小时最佳 15分，低于7或高于9扣分
-
-&#x20;       let sleepScore = 15;
-
-&#x20;       if (sleepHour < 6) sleepScore = 5;
-
-&#x20;       else if (sleepHour < 7) sleepScore = 10;
-
-&#x20;       else if (sleepHour > 9) sleepScore = 10;
-
-&#x20;       else if (sleepHour > 8.5) sleepScore = 12;
-
-&#x20;       // 饮食: good=20, normal=12, bad=5
-
-&#x20;       let dietScore = { good:20, normal:12, bad:5 }\[dietVal] || 12;
-
-&#x20;       // 学习/工作: 每满1小时得4分，上限25分
-
-&#x20;       let studyScore = Math.min(25, Math.floor(studyHour) \* 4 + (studyHour % 1 >= 0.5 ? 2 : 0));
-
-&#x20;       // 课余爱好: 每半小时得2分，上限15分
-
-&#x20;       let hobbyScore = Math.min(15, Math.floor(hobbyHour \* 2) \* 2);
-
-&#x20;       let total = sportScore + sleepScore + dietScore + studyScore + hobbyScore;
-
-&#x20;       // 保底0\~100
-
-&#x20;       return Math.min(100, Math.max(0, total));
-
-&#x20;   }
-
-
-
-&#x20;   // 从存储加载所有记录 { "2025-01-15": { sport, sleep, diet, study, hobby, score, points } }
-
-&#x20;   function loadRecords() {
-
-&#x20;       const raw = localStorage.getItem(STORAGE\_KEY);
-
-&#x20;       if (!raw) return {};
-
-&#x20;       try {
-
-&#x20;           return JSON.parse(raw);
-
-&#x20;       } catch(e) { return {}; }
-
-&#x20;   }
-
-
-
-&#x20;   function saveRecords(records) {
-
-&#x20;       localStorage.setItem(STORAGE\_KEY, JSON.stringify(records));
-
-&#x20;   }
-
-
-
-&#x20;   // 获取今日日期 YYYY-MM-DD
-
-&#x20;   function todayStr() {
-
-&#x20;       const today = new Date();
-
-&#x20;       return today.toISOString().slice(0,10);
-
-&#x20;   }
-
-
-
-&#x20;   // 重新计算所有记录的总积分与平均分等
-
-&#x20;   function recalcStats(records) {
-
-&#x20;       let totalPoints = 0;
-
-&#x20;       let count = 0;
-
-&#x20;       for (let key in records) {
-
-&#x20;           totalPoints += records\[key].points;
-
-&#x20;           count++;
-
-&#x20;       }
-
-&#x20;       const avg = count === 0 ? 0 : (totalPoints / count).toFixed(1);
-
-&#x20;       document.getElementById('totalPointsDisplay').innerText = totalPoints;
-
-&#x20;       document.getElementById('avgScoreDisplay').innerText = avg == 0 ? '--' : avg;
-
-&#x20;       return { totalPoints, avg, count };
-
-&#x20;   }
-
-
-
-&#x20;   // 预览今日分数（根据表单值）
-
-&#x20;   function updatePreview() {
-
-&#x20;       const sportVal = parseFloat(document.getElementById('sport').value) || 0;
-
-&#x20;       const sleepVal = parseFloat(document.getElementById('sleep').value) || 0;
-
-&#x20;       const dietVal = document.getElementById('diet').value;
-
-&#x20;       const studyVal = parseFloat(document.getElementById('study').value) || 0;
-
-&#x20;       const hobbyVal = parseFloat(document.getElementById('hobby').value) || 0;
-
-&#x20;       const score = computeScore(sportVal, sleepVal, dietVal, studyVal, hobbyVal);
-
-&#x20;       document.getElementById('previewScore').innerText = score;
-
-&#x20;   }
-
-
-
-&#x20;   // 保存当前打卡
-
-&#x20;   function saveCurrentLog() {
-
-&#x20;       const dateInput = document.getElementById('logDate').value;
-
-&#x20;       if (!dateInput) {
-
-&#x20;           alert('请选择日期');
-
-&#x20;           return;
-
-&#x20;       }
-
-&#x20;       const sportVal = parseFloat(document.getElementById('sport').value) || 0;
-
-&#x20;       const sleepVal = parseFloat(document.getElementById('sleep').value) || 0;
-
-&#x20;       const dietVal = document.getElementById('diet').value;
-
-&#x20;       const studyVal = parseFloat(document.getElementById('study').value) || 0;
-
-&#x20;       const hobbyVal = parseFloat(document.getElementById('hobby').value) || 0;
-
-&#x20;       const score = computeScore(sportVal, sleepVal, dietVal, studyVal, hobbyVal);
-
-&#x20;       const points = score;   // 积分=评分
-
-&#x20;       const record = {
-
-&#x20;           sport: sportVal,
-
-&#x20;           sleep: sleepVal,
-
-&#x20;           diet: dietVal,
-
-&#x20;           study: studyVal,
-
-&#x20;           hobby: hobbyVal,
-
-&#x20;           score: score,
-
-&#x20;           points: points
-
-&#x20;       };
-
-&#x20;       let records = loadRecords();
-
-&#x20;       records\[dateInput] = record;
-
-&#x20;       saveRecords(records);
-
-&#x20;       // 刷新界面
-
-&#x20;       renderHistoryTable(records);
-
-&#x20;       recalcStats(records);
-
-&#x20;       // 刷新图表（根据当前视图）
-
-&#x20;       refreshChart();
-
-&#x20;       alert(`✅ ${dateInput} 打卡成功！评分：${score}，积分+${points}`);
-
-&#x20;   }
-
-
-
-&#x20;   // 删除某天记录
-
-&#x20;   function deleteRecord(date, records) {
-
-&#x20;       if (confirm(`确定删除 ${date} 的打卡记录吗？`)) {
-
-&#x20;           delete records\[date];
-
-&#x20;           saveRecords(records);
-
-&#x20;           renderHistoryTable(records);
-
-&#x20;           recalcStats(records);
-
-&#x20;           refreshChart();
-
-&#x20;       }
-
-&#x20;   }
-
-
-
-&#x20;   // 渲染历史表格
-
-&#x20;   function renderHistoryTable(records) {
-
-&#x20;       const tbody = document.getElementById('historyTbody');
-
-&#x20;       if (!tbody) return;
-
-&#x20;       const sortedDates = Object.keys(records).sort().reverse(); // 最近在上
-
-&#x20;       tbody.innerHTML = '';
-
-&#x20;       for (let date of sortedDates) {
-
-&#x20;           const r = records\[date];
-
-&#x20;           const dietText = { good:'优秀', normal:'一般', bad:'较差' }\[r.diet] || r.diet;
-
-&#x20;           const row = tbody.insertRow();
-
-&#x20;           row.insertCell(0).innerText = date;
-
-&#x20;           row.insertCell(1).innerText = r.sport + ' min';
-
-&#x20;           row.insertCell(2).innerText = r.sleep + ' h';
-
-&#x20;           row.insertCell(3).innerText = dietText;
-
-&#x20;           row.insertCell(4).innerText = r.study + ' h';
-
-&#x20;           row.insertCell(5).innerText = r.hobby + ' h';
-
-&#x20;           row.insertCell(6).innerHTML = `<span class="rating-badge">${r.score}</span>`;
-
-&#x20;           row.insertCell(7).innerText = r.points;
-
-&#x20;           const delBtn = document.createElement('button');
-
-&#x20;           delBtn.innerText = '🗑️';
-
-&#x20;           delBtn.className = 'delete-btn';
-
-&#x20;           delBtn.onclick = (function(d) { return function() { deleteRecord(d, loadRecords()); }; })(date);
-
-&#x20;           const cell = row.insertCell(8);
-
-&#x20;           cell.appendChild(delBtn);
-
-&#x20;       }
-
-&#x20;       if (sortedDates.length === 0) {
-
-&#x20;           tbody.innerHTML = '<tr><td colspan="9" style="text-align:center;">暂无打卡记录，快开始今日打卡吧 ✨</td></tr>';
-
-&#x20;       }
-
-&#x20;   }
-
-
-
-&#x20;   // 图表实例
-
-&#x20;   let chartInstance = null;
-
-&#x20;   let currentChartMode = 'daily'; // 'daily' or 'monthly'
-
-
-
-&#x20;   // 获取最近30天的评分（日视图）
-
-&#x20;   function getLast30DaysScores(records) {
-
-&#x20;       const today = new Date();
-
-&#x20;       const result = \[];
-
-&#x20;       const labels = \[];
-
-&#x20;       for (let i = 29; i >= 0; i--) {
-
-&#x20;           const d = new Date(today);
-
-&#x20;           d.setDate(today.getDate() - i);
-
-&#x20;           const dateStr = d.toISOString().slice(0,10);
-
-&#x20;           const score = records\[dateStr] ? records\[dateStr].score : null;
-
-&#x20;           labels.push(dateStr.slice(5));
-
-&#x20;           result.push(score);
-
-&#x20;       }
-
-&#x20;       return { labels, scores: result };
-
-&#x20;   }
-
-
-
-&#x20;   // 月视图：获取指定月份的所有天评分 (YYYY-MM)
-
-&#x20;   function getMonthScores(records, yearMonth) {
-
-&#x20;       const \[year, month] = yearMonth.split('-').map(Number);
-
-&#x20;       const daysInMonth = new Date(year, month, 0).getDate();
-
-&#x20;       const labels = \[];
-
-&#x20;       const scores = \[];
-
-&#x20;       for (let d = 1; d <= daysInMonth; d++) {
-
-&#x20;           const dateStr = `${year}-${String(month).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-
-&#x20;           labels.push(`${d}`);
-
-&#x20;           const score = records\[dateStr] ? records\[dateStr].score : null;
-
-&#x20;           scores.push(score);
-
-&#x20;       }
-
-&#x20;       return { labels, scores };
-
-&#x20;   }
-
-
-
-&#x20;   function refreshChart() {
-
-&#x20;       const records = loadRecords();
-
-&#x20;       const ctx = document.getElementById('scoreChart').getContext('2d');
-
-&#x20;       let chartData = null;
-
-&#x20;       let chartLabel = '';
-
-&#x20;       if (currentChartMode === 'daily') {
-
-&#x20;           const { labels, scores } = getLast30DaysScores(records);
-
-&#x20;           chartData = {
-
-&#x20;               labels: labels,
-
-&#x20;               datasets: \[{
-
-&#x20;                   label: '每日评分 (分)',
-
-&#x20;                   data: scores,
-
-&#x20;                   borderColor: '#2b7a62',
-
-&#x20;                   backgroundColor: 'rgba(43,122,98,0.05)',
-
-&#x20;                   tension: 0.2,
-
-&#x20;                   fill: true,
-
-&#x20;                   pointBackgroundColor: '#1f5e4b',
-
-&#x20;                   pointRadius: 3
-
-&#x20;               }]
-
-&#x20;           };
-
-&#x20;           chartLabel = '最近30天评分趋势';
-
-&#x20;       } else {
-
-&#x20;           const monthVal = document.getElementById('monthSelector').value;
-
-&#x20;           if (!monthVal) return;
-
-&#x20;           const { labels, scores } = getMonthScores(records, monthVal);
-
-&#x20;           chartData = {
-
-&#x20;               labels: labels,
-
-&#x20;               datasets: \[{
-
-&#x20;                   label: `${monthVal} 每日评分`,
-
-&#x20;                   data: scores,
-
-&#x20;                   borderColor: '#4c9f8a',
-
-&#x20;                   backgroundColor: 'rgba(76,159,138,0.05)',
-
-&#x20;                   tension: 0.2,
-
-&#x20;                   fill: true,
-
-&#x20;                   pointBackgroundColor: '#2b7a62'
-
-&#x20;               }]
-
-&#x20;           };
-
-&#x20;       }
-
-&#x20;       if (chartInstance) chartInstance.destroy();
-
-&#x20;       chartInstance = new Chart(ctx, {
-
-&#x20;           type: 'line',
-
-&#x20;           data: chartData,
-
-&#x20;           options: {
-
-&#x20;               responsive: true,
-
-&#x20;               maintainAspectRatio: true,
-
-&#x20;               plugins: {
-
-&#x20;                   tooltip: { callbacks: { label: (ctx) => `${ctx.raw ?? '无记录'} 分` } },
-
-&#x20;                   legend: { position: 'top' }
-
-&#x20;               },
-
-&#x20;               scales: {
-
-&#x20;                   y: { min: 0, max: 100, title: { display: true, text: '评分 (分)' } },
-
-&#x20;                   x: { title: { display: true, text: currentChartMode === 'daily' ? '日期' : '日期(日)' } }
-
-&#x20;               }
-
-&#x20;           }
-
-&#x20;       });
-
-&#x20;   }
-
-
-
-&#x20;   // 重置表单为今日日期并预览
-
-&#x20;   function resetFormToToday() {
-
-&#x20;       document.getElementById('logDate').value = todayStr();
-
-&#x20;       // 可选将部分字段设为默认值，但保持之前输入也可以
-
-&#x20;       updatePreview();
-
-&#x20;   }
-
-
-
-&#x20;   // 绑定UI事件
-
-&#x20;   function bindEvents() {
-
-&#x20;       document.getElementById('saveBtn').addEventListener('click', saveCurrentLog);
-
-&#x20;       document.getElementById('resetBtn').addEventListener('click', resetFormToToday);
-
-&#x20;       const inputs = \['sport','sleep','study','hobby','diet'];
-
-&#x20;       inputs.forEach(id => {
-
-&#x20;           const el = document.getElementById(id);
-
-&#x20;           if (el) el.addEventListener('input', updatePreview);
-
-&#x20;       });
-
-&#x20;       document.getElementById('dailyViewBtn').addEventListener('click', () => {
-
-&#x20;           currentChartMode = 'daily';
-
-&#x20;           document.getElementById('dailyViewBtn').style.background = '#2b7a62';
-
-&#x20;           document.getElementById('dailyViewBtn').style.color = 'white';
-
-&#x20;           document.getElementById('monthlyViewBtn').style.background = '';
-
-&#x20;           document.getElementById('monthlyViewBtn').style.color = '#2b7a62';
-
-&#x20;           refreshChart();
-
-&#x20;       });
-
-&#x20;       document.getElementById('monthlyViewBtn').addEventListener('click', () => {
-
-&#x20;           currentChartMode = 'monthly';
-
-&#x20;           document.getElementById('monthlyViewBtn').style.background = '#2b7a62';
-
-&#x20;           document.getElementById('monthlyViewBtn').style.color = 'white';
-
-&#x20;           document.getElementById('dailyViewBtn').style.background = '';
-
-&#x20;           document.getElementById('dailyViewBtn').style.color = '#2b7a62';
-
-&#x20;           refreshChart();
-
-&#x20;       });
-
-&#x20;       document.getElementById('monthSelector').addEventListener('change', () => {
-
-&#x20;           if (currentChartMode === 'monthly') refreshChart();
-
-&#x20;       });
-
-&#x20;       // 初始化月份选择器为当前年月
-
-&#x20;       const now = new Date();
-
-&#x20;       const defaultMonth = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}`;
-
-&#x20;       document.getElementById('monthSelector').value = defaultMonth;
-
-&#x20;   }
-
-
-
-&#x20;   // 初始化页面
-
-&#x20;   function init() {
-
-&#x20;       bindEvents();
-
-&#x20;       resetFormToToday();
-
-&#x20;       const records = loadRecords();
-
-&#x20;       renderHistoryTable(records);
-
-&#x20;       recalcStats(records);
-
-&#x20;       // 默认日视图
-
-&#x20;       currentChartMode = 'daily';
-
-&#x20;       refreshChart();
-
-&#x20;       // 样式按钮默认日视图高亮
-
-&#x20;       document.getElementById('dailyViewBtn').style.background = '#2b7a62';
-
-&#x20;       document.getElementById('dailyViewBtn').style.color = 'white';
-
-&#x20;   }
-
-&#x20;   init();
-
+    const STORAGE_KEY = 'life_dashboard_records';
+
+    function computeScore(sportMin, sleepHour, dietVal, studyHour, hobbyHour) {
+        let sportScore = Math.min(15, 5 + Math.floor(Math.max(0, sportMin - 30) / 10));
+        if (sportMin <= 0) sportScore = 0;
+        let sleepScore = 15;
+        if (sleepHour < 6) sleepScore = 5;
+        else if (sleepHour < 7) sleepScore = 10;
+        else if (sleepHour > 9) sleepScore = 10;
+        else if (sleepHour > 8.5) sleepScore = 12;
+        let dietScore = { good:20, normal:12, bad:5 }[dietVal] || 12;
+        let studyScore = Math.min(25, Math.floor(studyHour) * 4 + (studyHour % 1 >= 0.5 ? 2 : 0));
+        let hobbyScore = Math.min(15, Math.floor(hobbyHour * 2) * 2);
+        let total = sportScore + sleepScore + dietScore + studyScore + hobbyScore;
+        return Math.min(100, Math.max(0, total));
+    }
+
+    function loadRecords() {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return {};
+        try { return JSON.parse(raw); } catch(e) { return {}; }
+    }
+    function saveRecords(records) { localStorage.setItem(STORAGE_KEY, JSON.stringify(records)); }
+    function todayStr() { return new Date().toISOString().slice(0,10); }
+
+    function recalcStats(records) {
+        let totalPoints = 0, count = 0;
+        for (let key in records) { totalPoints += records[key].points; count++; }
+        const avg = count === 0 ? 0 : (totalPoints / count).toFixed(1);
+        document.getElementById('totalPointsDisplay').innerText = totalPoints;
+        document.getElementById('avgScoreDisplay').innerText = avg == 0 ? '--' : avg;
+        return { totalPoints, avg, count };
+    }
+
+    function updatePreview() {
+        const sport = parseFloat(document.getElementById('sport').value) || 0;
+        const sleep = parseFloat(document.getElementById('sleep').value) || 0;
+        const diet = document.getElementById('diet').value;
+        const study = parseFloat(document.getElementById('study').value) || 0;
+        const hobby = parseFloat(document.getElementById('hobby').value) || 0;
+        const score = computeScore(sport, sleep, diet, study, hobby);
+        document.getElementById('previewScore').innerText = score;
+    }
+
+    function saveCurrentLog() {
+        const date = document.getElementById('logDate').value;
+        if (!date) { alert('请选择日期'); return; }
+        const sport = parseFloat(document.getElementById('sport').value) || 0;
+        const sleep = parseFloat(document.getElementById('sleep').value) || 0;
+        const diet = document.getElementById('diet').value;
+        const study = parseFloat(document.getElementById('study').value) || 0;
+        const hobby = parseFloat(document.getElementById('hobby').value) || 0;
+        const score = computeScore(sport, sleep, diet, study, hobby);
+        const points = score;
+        const record = { sport, sleep, diet, study, hobby, score, points };
+        let records = loadRecords();
+        records[date] = record;
+        saveRecords(records);
+        renderHistoryTable(records);
+        recalcStats(records);
+        refreshChart();
+        alert(`✅ ${date} 打卡成功！评分：${score}，积分+${points}`);
+    }
+
+    function deleteRecord(date, records) {
+        if (confirm(`确定删除 ${date} 的记录吗？`)) {
+            delete records[date];
+            saveRecords(records);
+            renderHistoryTable(records);
+            recalcStats(records);
+            refreshChart();
+        }
+    }
+
+    function renderHistoryTable(records) {
+        const tbody = document.getElementById('historyTbody');
+        const sortedDates = Object.keys(records).sort().reverse();
+        tbody.innerHTML = '';
+        for (let date of sortedDates) {
+            const r = records[date];
+            const dietText = { good:'优秀', normal:'一般', bad:'较差' }[r.diet] || r.diet;
+            const row = tbody.insertRow();
+            row.insertCell(0).innerText = date;
+            row.insertCell(1).innerText = r.sport + ' min';
+            row.insertCell(2).innerText = r.sleep + ' h';
+            row.insertCell(3).innerText = dietText;
+            row.insertCell(4).innerText = r.study + ' h';
+            row.insertCell(5).innerText = r.hobby + ' h';
+            row.insertCell(6).innerHTML = `<span class="rating-badge">${r.score}</span>`;
+            row.insertCell(7).innerText = r.points;
+            const delBtn = document.createElement('button');
+            delBtn.innerText = '🗑️';
+            delBtn.className = 'delete-btn';
+            delBtn.onclick = (function(d) { return function() { deleteRecord(d, loadRecords()); }; })(date);
+            row.insertCell(8).appendChild(delBtn);
+        }
+        if (sortedDates.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="9" style="text-align:center;">暂无打卡记录，快开始今日打卡吧 ✨</td></tr>';
+        }
+    }
+
+    let chartInstance = null;
+    let currentChartMode = 'daily';
+
+    function getLast30DaysScores(records) {
+        const today = new Date();
+        const labels = [], scores = [];
+        for (let i = 29; i >= 0; i--) {
+            const d = new Date(today);
+            d.setDate(today.getDate() - i);
+            const dateStr = d.toISOString().slice(0,10);
+            labels.push(dateStr.slice(5));
+            scores.push(records[dateStr] ? records[dateStr].score : null);
+        }
+        return { labels, scores };
+    }
+
+    function getMonthScores(records, yearMonth) {
+        const [year, month] = yearMonth.split('-').map(Number);
+        const daysInMonth = new Date(year, month, 0).getDate();
+        const labels = [], scores = [];
+        for (let d = 1; d <= daysInMonth; d++) {
+            const dateStr = `${year}-${String(month).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+            labels.push(`${d}`);
+            scores.push(records[dateStr] ? records[dateStr].score : null);
+        }
+        return { labels, scores };
+    }
+
+    function refreshChart() {
+        const records = loadRecords();
+        const ctx = document.getElementById('scoreChart').getContext('2d');
+        let chartData = null;
+        if (currentChartMode === 'daily') {
+            const { labels, scores } = getLast30DaysScores(records);
+            chartData = {
+                labels: labels,
+                datasets: [{ label: '每日评分 (分)', data: scores, borderColor: '#2b7a62', backgroundColor: 'rgba(43,122,98,0.05)', tension: 0.2, fill: true, pointBackgroundColor: '#1f5e4b', pointRadius: 3 }]
+            };
+        } else {
+            const monthVal = document.getElementById('monthSelector').value;
+            if (!monthVal) return;
+            const { labels, scores } = getMonthScores(records, monthVal);
+            chartData = {
+                labels: labels,
+                datasets: [{ label: `${monthVal} 每日评分`, data: scores, borderColor: '#4c9f8a', backgroundColor: 'rgba(76,159,138,0.05)', tension: 0.2, fill: true, pointBackgroundColor: '#2b7a62' }]
+            };
+        }
+        if (chartInstance) chartInstance.destroy();
+        chartInstance = new Chart(ctx, {
+            type: 'line',
+            data: chartData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: { tooltip: { callbacks: { label: (ctx) => `${ctx.raw ?? '无记录'} 分` } } },
+                scales: { y: { min: 0, max: 100, title: { display: true, text: '评分 (分)' } } }
+            }
+        });
+    }
+
+    function resetFormToToday() {
+        document.getElementById('logDate').value = todayStr();
+        updatePreview();
+    }
+
+    function bindEvents() {
+        document.getElementById('saveBtn').addEventListener('click', saveCurrentLog);
+        document.getElementById('resetBtn').addEventListener('click', resetFormToToday);
+        ['sport','sleep','study','hobby','diet'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.addEventListener('input', updatePreview);
+        });
+        document.getElementById('dailyViewBtn').addEventListener('click', () => {
+            currentChartMode = 'daily';
+            document.getElementById('dailyViewBtn').style.background = '#2b7a62';
+            document.getElementById('dailyViewBtn').style.color = 'white';
+            document.getElementById('monthlyViewBtn').style.background = '';
+            document.getElementById('monthlyViewBtn').style.color = '#2b7a62';
+            refreshChart();
+        });
+        document.getElementById('monthlyViewBtn').addEventListener('click', () => {
+            currentChartMode = 'monthly';
+            document.getElementById('monthlyViewBtn').style.background = '#2b7a62';
+            document.getElementById('monthlyViewBtn').style.color = 'white';
+            document.getElementById('dailyViewBtn').style.background = '';
+            document.getElementById('dailyViewBtn').style.color = '#2b7a62';
+            refreshChart();
+        });
+        document.getElementById('monthSelector').addEventListener('change', () => {
+            if (currentChartMode === 'monthly') refreshChart();
+        });
+    }
+
+    function init() {
+        bindEvents();
+        resetFormToToday();
+        const records = loadRecords();
+        renderHistoryTable(records);
+        recalcStats(records);
+        currentChartMode = 'daily';
+        refreshChart();
+        document.getElementById('dailyViewBtn').style.background = '#2b7a62';
+        document.getElementById('dailyViewBtn').style.color = 'white';
+    }
+    init();
 </script>
-
 </body>
-
 </html>
-
-
 
   
 
