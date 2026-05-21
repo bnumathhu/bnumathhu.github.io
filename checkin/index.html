@@ -19,15 +19,15 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="个人打卡仪表板                   * { box-sizing: border-box; }         body {             background: #f5f7fb;             font-family: &#39;Segoe UI&#39;, Roboto, &#39;Helvetica Neue&#39;, sans-serif;">
+    <meta name="description" content="今日生活趋势                   * { box-sizing: border-box; }         body {             background: #f5f7fb;             font-family: &#39;Segoe UI&#39;, Roboto, &#39;Helvetica Neue&#39;, sans-serif;">
 <meta property="og:type" content="website">
 <meta property="og:title" content="page.title">
 <meta property="og:url" content="http://example.com/checkin/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="个人打卡仪表板                   * { box-sizing: border-box; }         body {             background: #f5f7fb;             font-family: &#39;Segoe UI&#39;, Roboto, &#39;Helvetica Neue&#39;, sans-serif;">
+<meta property="og:description" content="今日生活趋势                   * { box-sizing: border-box; }         body {             background: #f5f7fb;             font-family: &#39;Segoe UI&#39;, Roboto, &#39;Helvetica Neue&#39;, sans-serif;">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-05-20T17:53:21.212Z">
-<meta property="article:modified_time" content="2026-05-20T17:53:21.212Z">
+<meta property="article:published_time" content="2026-05-21T15:32:44.932Z">
+<meta property="article:modified_time" content="2026-05-21T15:16:07.237Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -164,6 +164,18 @@
             </li>
           
         
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/checkin/" target="_self">
+                <i class="iconfont icon-calendar-fill"></i>
+                <span>每日生活速报</span>
+              </a>
+            </li>
+          
+        
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
@@ -260,6 +272,20 @@
             </div>
           
         
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/checkin/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-calendar-fill"></i>
+                  <span>每日生活速报</span>
+                </div>
+              </a>
+            </div>
+          
+        
         
           <div class="col-4 mobile-grid-cell" id="mobile-search-btn">
             <a href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
@@ -331,7 +357,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>个人打卡仪表板</title>
+    <title>今日生活趋势</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <style>
         * { box-sizing: border-box; }
@@ -386,6 +412,11 @@
             border: 1px solid #dce3ec;
             border-radius: 18px;
             font-size: 0.9rem;
+        }
+        .checkbox-group {
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
         }
         button {
             background: #2b7a62;
@@ -458,74 +489,125 @@
 <body>
 <div class="container">
     <div class="card">
-        <h1 id="📆-多维生活打卡-·-每日精进">📆 多维生活打卡 · 每日精进</h1>
-        <div class="sub">记录运动🏃 · 睡眠😴 · 饮食🥗 · 学习📚 · 爱好🎸 → 自动评分+积分 + 趋势图表</div>
+        <h1 id="📆-每日生活打卡">📆 每日生活打卡</h1>
+        <div class="sub">记录运动🏃 · 睡眠😴· 饮食🥗 · 学习📚 · 爱好🎸 → 自动评分累计积分！</div>
         <div class="form-grid" id="todayForm">
-            <div class="input-group"><label>📅 日期</label><input type="date" id="logDate" required></div>
-            <div class="input-group"><label>🏃 运动 (分钟)</label><input type="number" id="sport" value="30" min="0" step="5"></div>
-            <div class="input-group"><label>😴 睡眠 (小时)</label><input type="number" id="sleep" value="7.5" step="0.5" min="0" max="24"></div>
-            <div class="input-group"><label>🍽️ 饮食质量</label>
-                <select id="diet"><option value="good">优秀</option><option value="normal" selected>一般</option><option value="bad">较差</option></select>
-            </div>
-            <div class="input-group"><label>📖 学习/工作 (小时)</label><input type="number" id="study" value="2.5" step="0.5" min="0"></div>
-            <div class="input-group"><label>🎨 课余爱好 (小时)</label><input type="number" id="hobby" value="1" step="0.5" min="0"></div>
-        </div>
-        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 8px;">
-            <button id="saveBtn">✨ 保存今日打卡</button>
-            <button id="resetBtn" class="btn-outline">🔄 重置表单为今日</button>
-        </div>
-        <div style="font-size:0.8rem; color:#5f7d9c;">* 每次打卡自动计算评分(满分100)并累加积分，积分=每日评分之和。</div>
-    </div>
+            
+<pre><code class="hljs">        &lt;div class=&quot;input-group&quot;&gt;&lt;label&gt;📅 日期 (yyyy/mm/d)&lt;/label&gt;&lt;input type=&quot;date&quot; id=&quot;logDate&quot; required&gt;&lt;/div&gt;
+        &lt;div class=&quot;input-group&quot;&gt;&lt;label&gt;😴 睡眠时长 (小时)&lt;/label&gt;&lt;input type=&quot;number&quot; id=&quot;sleep&quot; value=&quot;7.5&quot; step=&quot;0.5&quot; min=&quot;0&quot; max=&quot;24&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;input-group&quot;&gt;&lt;label&gt;🌙 入睡时间&lt;/label&gt;
+            &lt;select id=&quot;bedtime&quot;&gt;
+                &lt;option value=&quot;10&quot;&gt;12:30之前&lt;/option&gt;
+                &lt;option value=&quot;8&quot;&gt;12:30~1:30&lt;/option&gt;
+                &lt;option value=&quot;6&quot;&gt;1:30~2:30&lt;/option&gt;
+                &lt;option value=&quot;4&quot;&gt;2:30~3:00&lt;/option&gt;
+                &lt;option value=&quot;2&quot;&gt;3:00~3:30&lt;/option&gt;
+                &lt;option value=&quot;0&quot;&gt;3:30~4:00&lt;/option&gt;
+                &lt;option value=&quot;-5&quot;&gt;4:00以后&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;input-group&quot;&gt;&lt;label&gt;🍽️ 用餐次数&lt;/label&gt;
+            &lt;select id=&quot;mealCount&quot;&gt;
+                &lt;option value=&quot;15&quot;&gt;三餐&lt;/option&gt;
+                &lt;option value=&quot;10&quot;&gt;两餐&lt;/option&gt;
+                &lt;option value=&quot;5&quot;&gt;一餐&lt;/option&gt;
+                &lt;option value=&quot;0&quot;&gt;不吃（该受批评了！）&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;input-group checkbox-group&quot;&gt;
+            &lt;label&gt;➕ 水果/牛奶 (+5分)&lt;/label&gt;
+            &lt;input type=&quot;checkbox&quot; id=&quot;fruitMilk&quot; style=&quot;width:20px; margin-left:8px;&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;input-group&quot;&gt;&lt;label&gt;📖 学习/工作 (小时)&lt;/label&gt;&lt;input type=&quot;number&quot; id=&quot;study&quot; value=&quot;2.5&quot; step=&quot;0.5&quot; min=&quot;0&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;input-group&quot;&gt;&lt;label&gt;🏃 运动 (分钟)&lt;/label&gt;&lt;input type=&quot;number&quot; id=&quot;sport&quot; value=&quot;30&quot; min=&quot;0&quot; step=&quot;5&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;input-group&quot;&gt;&lt;label&gt;🎨 课余爱好 (分钟)&lt;/label&gt;&lt;input type=&quot;number&quot; id=&quot;hobbyMin&quot; value=&quot;30&quot; step=&quot;1&quot; min=&quot;0&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div style=&quot;display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 8px;&quot;&gt;
+        &lt;button id=&quot;saveBtn&quot;&gt;✨ 保存今日打卡&lt;/button&gt;
+        &lt;button id=&quot;resetBtn&quot; class=&quot;btn-outline&quot;&gt;🔄 重置表单为今日&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div style=&quot;font-size:0.8rem; color:#5f7d9c;&quot;&gt;* 评分规则: 运动(15)、睡眠时长+入睡时间(15+10)、饮食(15+5)、学习(30)、爱好分钟(10)，总分100。&lt;/div&gt;
+&lt;/div&gt;
 
-    <div class="card">
-        <div class="stats-row">
-            <div class="score-board"><div>🏆 累计积分</div><div class="big-score" id="totalPointsDisplay">0</div></div>
-            <div class="score-board"><div>⭐ 今日预估评分</div><div class="big-score" id="previewScore">--</div></div>
-            <div class="score-board"><div>📈 平均分(总天数)</div><div class="big-score" id="avgScoreDisplay">--</div></div>
-        </div>
-    </div>
+&lt;div class=&quot;card&quot;&gt;
+    &lt;div class=&quot;stats-row&quot;&gt;
+        &lt;div class=&quot;score-board&quot;&gt;&lt;div&gt;🏆 累计积分&lt;/div&gt;&lt;div class=&quot;big-score&quot; id=&quot;totalPointsDisplay&quot;&gt;0&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;score-board&quot;&gt;&lt;div&gt;⭐ 今日预估评分&lt;/div&gt;&lt;div class=&quot;big-score&quot; id=&quot;previewScore&quot;&gt;--&lt;/div&gt;&lt;/div&gt;
+        &lt;div class=&quot;score-board&quot;&gt;&lt;div&gt;📈 平均分(总天数)&lt;/div&gt;&lt;div class=&quot;big-score&quot; id=&quot;avgScoreDisplay&quot;&gt;--&lt;/div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
 
-    <div class="card">
-        <div class="filter-bar">
-            <h3 style="margin:0;">📊 评分趋势</h3>
-            <div class="month-picker">
-                <span>📅 视图：</span>
-                <button id="dailyViewBtn" class="btn-outline" style="background:#2b7a62; color:white;">日折线</button>
-                <button id="monthlyViewBtn" class="btn-outline">月均折线</button>
-                <input type="month" id="monthSelector" value="2025-01" style="width:140px;">
-            </div>
-        </div>
-        <div class="chart-container"><canvas id="scoreChart"></canvas></div>
-        <p style="font-size:0.75rem;">日视图显示最近30天评分；月视图展示所选月份各天评分</p>
-    </div>
+&lt;div class=&quot;card&quot;&gt;
+    &lt;div class=&quot;filter-bar&quot;&gt;
+        &lt;h3 style=&quot;margin:0;&quot;&gt;📊 评分趋势&lt;/h3&gt;
+        &lt;div class=&quot;month-picker&quot;&gt;
+            &lt;span&gt;📅 视图：&lt;/span&gt;
+            &lt;button id=&quot;dailyViewBtn&quot; class=&quot;btn-outline&quot; style=&quot;background:#2b7a62; color:white;&quot;&gt;日折线&lt;/button&gt;
+            &lt;button id=&quot;monthlyViewBtn&quot; class=&quot;btn-outline&quot;&gt;月均折线&lt;/button&gt;
+            &lt;input type=&quot;month&quot; id=&quot;monthSelector&quot; value=&quot;2025-01&quot; style=&quot;width:140px;&quot;&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;chart-container&quot;&gt;&lt;canvas id=&quot;scoreChart&quot;&gt;&lt;/canvas&gt;&lt;/div&gt;
+    &lt;p style=&quot;font-size:0.75rem;&quot;&gt;日视图显示最近30天评分；月视图展示所选月份各天评分&lt;/p&gt;
+&lt;/div&gt;
 
-    <div class="card">
-        <h3>📋 历史打卡明细</h3>
-        <div class="history-table">
-            <table id="historyTable">
-                <thead><tr><th>日期</th><th>运动</th><th>睡眠</th><th>饮食</th><th>学习/工作</th><th>爱好</th><th>评分</th><th>积分</th><th>操作</th></tr></thead>
-                <tbody id="historyTbody"></tbody>
-            </table>
-        </div>
-    </div>
-    <footer>数据存储在浏览器本地 (localStorage)，打卡记录不会丢失。</footer>
+&lt;div class=&quot;card&quot;&gt;
+    &lt;h3&gt;📋 历史打卡明细&lt;/h3&gt;
+    &lt;div class=&quot;history-table&quot;&gt;
+        &lt;table id=&quot;historyTable&quot;&gt;
+            &lt;thead&gt;&lt;tr&gt;&lt;th&gt;日期&lt;/th&gt;&lt;th&gt;运动&lt;/th&gt;&lt;th&gt;睡眠(h)&lt;/th&gt;&lt;th&gt;入睡&lt;/th&gt;&lt;th&gt;饮食&lt;/th&gt;&lt;th&gt;学习/工作&lt;/th&gt;&lt;th&gt;爱好(min)&lt;/th&gt;&lt;th&gt;评分&lt;/th&gt;&lt;th&gt;积分&lt;/th&gt;&lt;th&gt;操作&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+            &lt;tbody id=&quot;historyTbody&quot;&gt;&lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;footer&gt;数据存储在浏览器本地 (localStorage)，打卡记录不会丢失。&lt;/footer&gt;
+</code></pre>
 </div>
 
 <script>
     const STORAGE_KEY = 'life_dashboard_records';
 
-    function computeScore(sportMin, sleepHour, dietVal, studyHour, hobbyHour) {
-        let sportScore = Math.min(15, 5 + Math.floor(Math.max(0, sportMin - 30) / 10));
+    // ========== 新版评分函数 ==========
+    function computeScore(sportMin, sleepHour, bedtimeScore, mealCountVal, fruitMilk, studyHour, hobbyMin) {
+        // 1. 运动: 0分→0; >0基础3分,每5分钟+1,上限15分(60分钟)
+        let sportScore = 0;
         if (sportMin <= 0) sportScore = 0;
-        let sleepScore = 15;
-        if (sleepHour < 6) sleepScore = 5;
-        else if (sleepHour < 7) sleepScore = 10;
-        else if (sleepHour > 9) sleepScore = 10;
-        else if (sleepHour > 8.5) sleepScore = 12;
-        let dietScore = { good:20, normal:12, bad:5 }[dietVal] || 12;
-        let studyScore = Math.min(25, Math.floor(studyHour) * 4 + (studyHour % 1 >= 0.5 ? 2 : 0));
-        let hobbyScore = Math.min(15, Math.floor(hobbyHour * 2) * 2);
+        else {
+            let extra = Math.floor(sportMin / 5);   // 每5分钟1分
+            sportScore = 3 + Math.min(12, extra);   // 最多额外+12 => 总分15
+        }
+
+        // 2. 睡眠: a部分时长(满分15) + b部分入睡(满分10,可能负分)
+        let sleepDurationScore = 0;
+        if (sleepHour < 6) sleepDurationScore = 5;
+        else if (sleepHour < 7) sleepDurationScore = 10;
+        else if (sleepHour <= 8.5) sleepDurationScore = 15;
+        else if (sleepHour <= 9) sleepDurationScore = 12;
+        else sleepDurationScore = 10;
+        let sleepTimingScore = bedtimeScore; // 传入的已经是对应分值(可为-5)
+        let sleepScore = sleepDurationScore + sleepTimingScore;
+        // 睡眠总分不低于0 (不设上限，最大25)
+        if (sleepScore < 0) sleepScore = 0;
+
+        // 3. 饮食: 餐数基础分(15/10/5/0) + 水果牛奶5分, 上限20
+        let dietScore = mealCountVal;
+        if (fruitMilk) dietScore += 5;
+        if (dietScore > 20) dietScore = 20;
+        if (dietScore < 0) dietScore = 0;
+
+        // 4. 学习/工作: floor(h) * 5 + (小数≥0.5?3:0), 上限30
+        let studyScore = Math.floor(studyHour) * 5;
+        if (studyHour % 1 >= 0.5) studyScore += 3;
+        if (studyScore > 30) studyScore = 30;
+        if (studyScore < 0) studyScore = 0;
+
+        // 5. 爱好: 每分钟计数, 每4分钟得1分, 向下取整, 上限10
+        let hobbyScore = Math.floor(hobbyMin / 4);
+        if (hobbyScore > 10) hobbyScore = 10;
+        if (hobbyScore < 0) hobbyScore = 0;
+
         let total = sportScore + sleepScore + dietScore + studyScore + hobbyScore;
+        // 总分限定0~100
         return Math.min(100, Math.max(0, total));
     }
 
@@ -549,10 +631,13 @@
     function updatePreview() {
         const sport = parseFloat(document.getElementById('sport').value) || 0;
         const sleep = parseFloat(document.getElementById('sleep').value) || 0;
-        const diet = document.getElementById('diet').value;
+        const bedtimeSelect = document.getElementById('bedtime');
+        const bedtimeScore = parseFloat(bedtimeSelect.value);
+        const mealCount = parseFloat(document.getElementById('mealCount').value);
+        const fruitMilk = document.getElementById('fruitMilk').checked;
         const study = parseFloat(document.getElementById('study').value) || 0;
-        const hobby = parseFloat(document.getElementById('hobby').value) || 0;
-        const score = computeScore(sport, sleep, diet, study, hobby);
+        const hobbyMin = parseFloat(document.getElementById('hobbyMin').value) || 0;
+        const score = computeScore(sport, sleep, bedtimeScore, mealCount, fruitMilk, study, hobbyMin);
         document.getElementById('previewScore').innerText = score;
     }
 
@@ -561,12 +646,21 @@
         if (!date) { alert('请选择日期'); return; }
         const sport = parseFloat(document.getElementById('sport').value) || 0;
         const sleep = parseFloat(document.getElementById('sleep').value) || 0;
-        const diet = document.getElementById('diet').value;
+        const bedtimeSelect = document.getElementById('bedtime');
+        const bedtimeLabel = bedtimeSelect.options[bedtimeSelect.selectedIndex]?.text || '';
+        const bedtimeScore = parseFloat(bedtimeSelect.value);
+        const mealCountVal = parseFloat(document.getElementById('mealCount').value);
+        const mealCountLabel = document.getElementById('mealCount').options[document.getElementById('mealCount').selectedIndex]?.text || '';
+        const fruitMilk = document.getElementById('fruitMilk').checked;
         const study = parseFloat(document.getElementById('study').value) || 0;
-        const hobby = parseFloat(document.getElementById('hobby').value) || 0;
-        const score = computeScore(sport, sleep, diet, study, hobby);
+        const hobbyMin = parseFloat(document.getElementById('hobbyMin').value) || 0;
+        const score = computeScore(sport, sleep, bedtimeScore, mealCountVal, fruitMilk, study, hobbyMin);
         const points = score;
-        const record = { sport, sleep, diet, study, hobby, score, points };
+        const record = {
+            sport, sleep, bedtimeLabel, bedtimeScore,
+            mealCountVal, mealCountLabel, fruitMilk,
+            study, hobbyMin, score, points
+        };
         let records = loadRecords();
         records[date] = record;
         saveRecords(records);
@@ -592,24 +686,36 @@
         tbody.innerHTML = '';
         for (let date of sortedDates) {
             const r = records[date];
-            const dietText = { good:'优秀', normal:'一般', bad:'较差' }[r.diet] || r.diet;
+            // 兼容旧记录（没有新字段时显示兼容信息）
+            const sportDisplay = r.sport !== undefined ? r.sport + ' min' : '—';
+            const sleepDisplay = r.sleep !== undefined ? r.sleep + ' h' : '—';
+            const bedtimeDisplay = r.bedtimeLabel || (r.bedtimeScore !== undefined ? '入睡分:'+r.bedtimeScore : '旧数据');
+            let dietDisplay = '';
+            if (r.mealCountLabel) dietDisplay = r.mealCountLabel + (r.fruitMilk ? '+水果/奶' : '');
+            else if (r.diet) dietDisplay = r.diet;  // 兼容超旧版
+            else dietDisplay = '—';
+            const studyDisplay = r.study !== undefined ? r.study + ' h' : '—';
+            const hobbyDisplay = r.hobbyMin !== undefined ? r.hobbyMin + ' min' : (r.hobby ? r.hobby+' h(旧)' : '—');
+            const scoreDisplay = r.score !== undefined ? r.score : '—';
+            const pointsDisplay = r.points !== undefined ? r.points : '—';
             const row = tbody.insertRow();
             row.insertCell(0).innerText = date;
-            row.insertCell(1).innerText = r.sport + ' min';
-            row.insertCell(2).innerText = r.sleep + ' h';
-            row.insertCell(3).innerText = dietText;
-            row.insertCell(4).innerText = r.study + ' h';
-            row.insertCell(5).innerText = r.hobby + ' h';
-            row.insertCell(6).innerHTML = `<span class="rating-badge">${r.score}</span>`;
-            row.insertCell(7).innerText = r.points;
+            row.insertCell(1).innerText = sportDisplay;
+            row.insertCell(2).innerText = sleepDisplay;
+            row.insertCell(3).innerText = bedtimeDisplay;
+            row.insertCell(4).innerText = dietDisplay;
+            row.insertCell(5).innerText = studyDisplay;
+            row.insertCell(6).innerText = hobbyDisplay;
+            row.insertCell(7).innerHTML = `<span class="rating-badge">${scoreDisplay}</span>`;
+            row.insertCell(8).innerText = pointsDisplay;
             const delBtn = document.createElement('button');
             delBtn.innerText = '🗑️';
             delBtn.className = 'delete-btn';
             delBtn.onclick = (function(d) { return function() { deleteRecord(d, loadRecords()); }; })(date);
-            row.insertCell(8).appendChild(delBtn);
+            row.insertCell(9).appendChild(delBtn);
         }
         if (sortedDates.length === 0) {
-            tbody.innerHTML = '<tr><td colspan="9" style="text-align:center;">暂无打卡记录，快开始今日打卡吧 ✨</td></tr>';
+            tbody.innerHTML = '<tr><td colspan="10" style="text-align:center;">暂无打卡记录，快开始今日打卡吧 ✨</td></tr>';
         }
     }
 
@@ -675,13 +781,23 @@
 
     function resetFormToToday() {
         document.getElementById('logDate').value = todayStr();
+        // 可选设置默认值
+        document.getElementById('sport').value = "30";
+        document.getElementById('sleep').value = "7.5";
+        document.getElementById('bedtime').value = "10";
+        document.getElementById('mealCount').value = "15";
+        document.getElementById('fruitMilk').checked = false;
+        document.getElementById('study').value = "2.5";
+        document.getElementById('hobbyMin').value = "30";
         updatePreview();
     }
 
     function bindEvents() {
         document.getElementById('saveBtn').addEventListener('click', saveCurrentLog);
         document.getElementById('resetBtn').addEventListener('click', resetFormToToday);
-        ['sport','sleep','study','hobby','diet'].forEach(id => {
+        // 所有输入控件变化时更新预览
+        const inputs = ['sport', 'sleep', 'bedtime', 'mealCount', 'fruitMilk', 'study', 'hobbyMin'];
+        inputs.forEach(id => {
             const el = document.getElementById(id);
             if (el) el.addEventListener('input', updatePreview);
         });
