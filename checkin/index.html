@@ -19,15 +19,15 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="* { box-sizing: border-box; }         body {             background: #f5f7fb;             font-family: &#39;Segoe UI&#39;, Roboto, &#39;Helvetica Neue&#39;, sans-serif;             marg">
+    <meta name="description" content="每日生活速记 + 计划清单                   * { box-sizing: border-box; }         body {             background: #f5f7fb;             font-family: &#39;Segoe UI&#39;, Roboto, &#39;Helvetica Neue&#39;, sans-serif">
 <meta property="og:type" content="website">
 <meta property="og:title" content="page.title">
 <meta property="og:url" content="http://example.com/checkin/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="* { box-sizing: border-box; }         body {             background: #f5f7fb;             font-family: &#39;Segoe UI&#39;, Roboto, &#39;Helvetica Neue&#39;, sans-serif;             marg">
+<meta property="og:description" content="每日生活速记 + 计划清单                   * { box-sizing: border-box; }         body {             background: #f5f7fb;             font-family: &#39;Segoe UI&#39;, Roboto, &#39;Helvetica Neue&#39;, sans-serif">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-05-22T06:43:39.042Z">
-<meta property="article:modified_time" content="2026-05-22T06:31:34.978Z">
+<meta property="article:published_time" content="2026-06-01T17:49:43.132Z">
+<meta property="article:modified_time" content="2026-06-01T17:49:43.132Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -383,6 +383,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>每日生活速记 + 计划清单</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <style>
         * { box-sizing: border-box; }
@@ -509,15 +510,155 @@
         }
         .month-picker { display: flex; gap: 8px; align-items: center; }
         footer { text-align: center; font-size: 0.75rem; color: #7c8ba0; margin-top: 30px; }
+
+        /* ----- 计划清单样式 ----- */
+        .plan-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+        .plan-date-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            gap: 12px;
+        }
+        .plan-date-nav button {
+            background: none;
+            border: 1px solid #cbd5e1;
+            color: #2b7a62;
+            padding: 6px 12px;
+            font-size: 0.85rem;
+        }
+        .plan-date-display {
+            font-weight: 600;
+            background: #eef5f2;
+            padding: 6px 16px;
+            border-radius: 40px;
+        }
+        .plan-add {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .plan-add input {
+            flex: 1;
+            padding: 10px 14px;
+            border-radius: 40px;
+            border: 1px solid #dce3ec;
+        }
+        .plan-add button {
+            padding: 8px 20px;
+            background: #4c9f8a;
+        }
+        .plan-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .plan-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #ffffff;
+            margin-bottom: 10px;
+            padding: 10px 16px;
+            border-radius: 60px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.1s;
+            cursor: pointer;
+        }
+        .plan-item .task-text {
+            flex: 1;
+            font-size: 0.95rem;
+            font-weight: 500;
+            word-break: break-word;
+            padding-right: 12px;
+        }
+        .plan-item .delete-plan-btn {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: #94a3b8;
+            padding: 0 6px;
+        }
+        .plan-item .delete-plan-btn:hover {
+            color: #e53e3e;
+        }
+        .plan-item.pending {
+            background-color: #ffffff;
+            border-left: 8px solid #cbd5e1;
+        }
+        .plan-item.done {
+            background-color: #e6f7ec;
+            border-left: 8px solid #2b7a62;
+            text-decoration: line-through;
+            color: #4a5568;
+        }
+        .plan-item.failed {
+            background-color: #ffe6e5;
+            border-left: 8px solid #e53e3e;
+        }
+        .empty-plan {
+            text-align: center;
+            color: #94a3b8;
+            padding: 24px 0;
+            font-style: italic;
+        }
+        /* 横向滚动样式 */
+        #scrollContainer {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding-bottom: 8px;
+        }
+        #scrollContainer::-webkit-scrollbar {
+            height: 6px;
+        }
+        #scrollContainer::-webkit-scrollbar-track {
+            background: #e9edf2;
+            border-radius: 10px;
+        }
+        #scrollContainer::-webkit-scrollbar-thumb {
+            background: #2b7a62;
+            border-radius: 10px;
+        }
+        .compare-card {
+            display: inline-block;
+            width: 260px;
+            margin-right: 16px;
+            background: #f9fafb;
+            border-radius: 24px;
+            padding: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            vertical-align: top;
+            white-space: normal;
+        }
+        .progress-bar-bg {
+            background: #e2e8f0;
+            border-radius: 12px;
+            height: 8px;
+            width: 100%;
+            margin-bottom: 8px;
+        }
+        .progress-fill {
+            background: #2b7a62;
+            width: 0%;
+            height: 8px;
+            border-radius: 12px;
+        }
     </style>
 </head>
 <body>
 <div class="container">
+    <!-- 原有打卡卡片 -->
     <div class="card">
         <h1 id="📆-每日生活速记">📆 每日生活速记</h1>
         <div class="sub">苟日新，日日新，又日新</div>
         <div class="form-grid" id="todayForm">
-            <!-- 日期 label 显示 yyyy/mm/d ，满足用户要求 -->
             <div class="input-group"><label>📅 日期</label><input type="date" id="logDate" required></div>
             <div class="input-group"><label>😴 睡眠时长 (h)</label><input type="number" id="sleep" value="7.5" step="0.5" min="0" max="24"></div>
             <div class="input-group"><label>🌙 入睡时间</label>
@@ -533,15 +674,15 @@
             </div>
             <div class="input-group"><label>🍽️ 用餐次数</label>
                 <select id="mealCount">
-                    <option value="15">三餐</option>
-                    <option value="10">两餐</option>
+                    <option value="15">三餐（蒸蚌！）</option>
+                    <option value="10">两餐（不错捏）</option>
                     <option value="5">一餐（真就吃一顿吗？）</option>
                     <option value="0">不吃（真的不吃饭吗！）</option>
                 </select>
             </div>
             <div class="input-group checkbox-group">
-                <label>➕ 水果/牛奶 (+5分)</label>
-                <input type="checkbox" id="fruitMilk" style="width:20px; margin-left:8px;">
+                <label>➕ 水果/牛奶 (五蚂蚁！)</label>
+                <input type="checkbox" id="fruitMilk" style="width:20px; margin-left:2px;">
             </div>
             <div class="input-group"><label>📖 学习/工作 (h)</label><input type="number" id="study" value="2.5" step="0.5" min="0"></div>
             <div class="input-group"><label>🏃 运动 (min)</label><input type="number" id="sport" value="30" min="0" step="5"></div>
@@ -559,6 +700,44 @@
             <div class="score-board"><div>🏆 累计积分</div><div class="big-score" id="totalPointsDisplay">0</div></div>
             <div class="score-board"><div>⭐ 今日预估评分</div><div class="big-score" id="previewScore">--</div></div>
             <div class="score-board"><div>📈 平均分(总天数)</div><div class="big-score" id="avgScoreDisplay">--</div></div>
+        </div>
+    </div>
+
+    <!-- ========= 每日计划模块 ========= -->
+    <div class="card">
+        <div class="plan-header">
+            <h3 style="margin:0;">📋 每日计划清单</h3>
+            <button id="switchViewBtn" class="btn-outline" style="padding: 4px 12px; font-size:0.8rem;">⇄ 横向对比</button>
+        </div>
+
+        <!-- 单日详细视图 (默认) -->
+        <div id="singleDayView">
+            <div class="plan-date-nav">
+                <button id="prevDayBtn">← 前一天</button>
+                <span class="plan-date-display" id="planDateDisplay">📅 </span>
+                <button id="nextDayBtn">后一天 →</button>
+            </div>
+            <div class="plan-add">
+                <input type="text" id="newPlanText" placeholder="写下一个任务，例如：进行一场吉列地蘸豆！" maxlength="80">
+                <button id="addPlanBtn">➕ 添加任务</button>
+            </div>
+            <ul class="plan-list" id="planListContainer">
+                <li class="empty-plan">暂无计划，添加一条吧~</li>
+            </ul>
+            <div style="font-size:0.75rem; margin-top:12px; color:#6c86a3;">
+                💡 点击任务切换状态：<span style="background:#fff; border-left:6px solid #cbd5e1; padding:2px 8px;">⚪待完成</span> → 
+                <span style="background:#e6f7ec; border-left:6px solid #2b7a62; padding:2px 8px;">✅已完成</span> → 
+                <span style="background:#ffe6e5; border-left:6px solid #e53e3e; padding:2px 8px;">❌未完成</span> 
+            </div>
+        </div>
+
+        <!-- 横向对比视图 (初始隐藏) -->
+        <div id="compareView" style="display: none;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <span style="font-size: 0.85rem;">左右滑动查看多天计划完成情况</span>
+                <button id="backToSingleBtn" class="btn-outline" style="padding: 4px 12px; font-size:0.8rem;">← 返回详细视图</button>
+            </div>
+            <div id="scrollContainer"></div>
         </div>
     </div>
 
@@ -580,58 +759,47 @@
         <h3>📋 历史打卡明细</h3>
         <div class="history-table">
             <table id="historyTable">
-                <thead><tr><th>日期</th><th>运动</th><th>睡眠(h)</th><th>入睡</th><th>饮食</th><th>学习/工作</th><th>爱好(min)</th><th>评分</th><th>积分</th><th>操作</th></tr></thead>
+                <thead>大学<th>日期</th><th>运动</th><th>睡眠(h)</th><th>入睡</th><th>饮食</th><th>学习/工作</th><th>爱好(min)</th><th>评分</th><th>积分</th><th>操作</th></tr></thead>
                 <tbody id="historyTbody"></tbody>
             </table>
         </div>
     </div>
-    <footer>数据存储在浏览器本地 (localStorage)，打卡记录不会丢失。</footer>
+    <footer>敬请注意：数据仅存储在浏览器本地 (localStorage)。</footer>
 </div>
 
 <script>
     const STORAGE_KEY = 'life_dashboard_records';
+    const PLAN_STORAGE_KEY = 'daily_plans_v2';
 
-    // ========== 新版评分函数 ==========
+    // ========== 原有评分函数 ==========
     function computeScore(sportMin, sleepHour, bedtimeScore, mealCountVal, fruitMilk, studyHour, hobbyMin) {
-        // 1. 运动: 0分→0; >0基础3分,每5分钟+1,上限15分(60分钟)
         let sportScore = 0;
         if (sportMin <= 0) sportScore = 0;
         else {
-            let extra = Math.floor(sportMin / 5);   // 每5分钟1分
-            sportScore = 3 + Math.min(12, extra);   // 最多额外+12 => 总分15
+            let extra = Math.floor(sportMin / 5);
+            sportScore = 3 + Math.min(12, extra);
         }
-
-        // 2. 睡眠: a部分时长(满分15) + b部分入睡(满分10,可能负分)
         let sleepDurationScore = 0;
         if (sleepHour < 6) sleepDurationScore = 5;
         else if (sleepHour < 7) sleepDurationScore = 10;
         else if (sleepHour <= 8.5) sleepDurationScore = 15;
         else if (sleepHour <= 9) sleepDurationScore = 12;
         else sleepDurationScore = 10;
-        let sleepTimingScore = bedtimeScore; // 传入的已经是对应分值(可为-5)
+        let sleepTimingScore = bedtimeScore;
         let sleepScore = sleepDurationScore + sleepTimingScore;
-        // 睡眠总分不低于0 (不设上限，最大25)
         if (sleepScore < 0) sleepScore = 0;
-
-        // 3. 饮食: 餐数基础分(15/10/5/0) + 水果牛奶5分, 上限20
         let dietScore = mealCountVal;
         if (fruitMilk) dietScore += 5;
         if (dietScore > 20) dietScore = 20;
         if (dietScore < 0) dietScore = 0;
-
-        // 4. 学习/工作: floor(h) * 5 + (小数≥0.5?3:0), 上限30
         let studyScore = Math.floor(studyHour) * 5;
         if (studyHour % 1 >= 0.5) studyScore += 3;
         if (studyScore > 30) studyScore = 30;
         if (studyScore < 0) studyScore = 0;
-
-        // 5. 爱好: 每分钟计数, 每4分钟得1分, 向下取整, 上限10
         let hobbyScore = Math.floor(hobbyMin / 4);
         if (hobbyScore > 10) hobbyScore = 10;
         if (hobbyScore < 0) hobbyScore = 0;
-
         let total = sportScore + sleepScore + dietScore + studyScore + hobbyScore;
-        // 总分限定0~100
         return Math.min(100, Math.max(0, total));
     }
 
@@ -655,13 +823,12 @@
     function updatePreview() {
         const sport = parseFloat(document.getElementById('sport').value) || 0;
         const sleep = parseFloat(document.getElementById('sleep').value) || 0;
-        const bedtimeSelect = document.getElementById('bedtime');
-        const bedtimeScore = parseFloat(bedtimeSelect.value);
-        const mealCount = parseFloat(document.getElementById('mealCount').value);
+        const bedtimeScore = parseFloat(document.getElementById('bedtime').value);
+        const mealCountVal = parseFloat(document.getElementById('mealCount').value);
         const fruitMilk = document.getElementById('fruitMilk').checked;
         const study = parseFloat(document.getElementById('study').value) || 0;
         const hobbyMin = parseFloat(document.getElementById('hobbyMin').value) || 0;
-        const score = computeScore(sport, sleep, bedtimeScore, mealCount, fruitMilk, study, hobbyMin);
+        const score = computeScore(sport, sleep, bedtimeScore, mealCountVal, fruitMilk, study, hobbyMin);
         document.getElementById('previewScore').innerText = score;
     }
 
@@ -710,13 +877,12 @@
         tbody.innerHTML = '';
         for (let date of sortedDates) {
             const r = records[date];
-            // 兼容旧记录（没有新字段时显示兼容信息）
             const sportDisplay = r.sport !== undefined ? r.sport + ' min' : '—';
             const sleepDisplay = r.sleep !== undefined ? r.sleep + ' h' : '—';
             const bedtimeDisplay = r.bedtimeLabel || (r.bedtimeScore !== undefined ? '入睡分:'+r.bedtimeScore : '旧数据');
             let dietDisplay = '';
             if (r.mealCountLabel) dietDisplay = r.mealCountLabel + (r.fruitMilk ? '+水果/奶' : '');
-            else if (r.diet) dietDisplay = r.diet;  // 兼容超旧版
+            else if (r.diet) dietDisplay = r.diet;
             else dietDisplay = '—';
             const studyDisplay = r.study !== undefined ? r.study + ' h' : '—';
             const hobbyDisplay = r.hobbyMin !== undefined ? r.hobbyMin + ' min' : (r.hobby ? r.hobby+' h(旧)' : '—');
@@ -805,7 +971,6 @@
 
     function resetFormToToday() {
         document.getElementById('logDate').value = todayStr();
-        // 可选设置默认值
         document.getElementById('sport').value = "30";
         document.getElementById('sleep').value = "7.5";
         document.getElementById('bedtime').value = "10";
@@ -816,10 +981,219 @@
         updatePreview();
     }
 
+    // ========== 每日计划功能 (增强版) ==========
+    function loadPlans() {
+        const raw = localStorage.getItem(PLAN_STORAGE_KEY);
+        if (!raw) return {};
+        try { return JSON.parse(raw); } catch(e) { return {}; }
+    }
+    function savePlans(allPlans) {
+        localStorage.setItem(PLAN_STORAGE_KEY, JSON.stringify(allPlans));
+    }
+    function getPlanForDate(date) {
+        const plans = loadPlans();
+        return plans[date] || [];
+    }
+    function setPlanForDate(date, tasks) {
+        const plans = loadPlans();
+        plans[date] = tasks;
+        savePlans(plans);
+    }
+    function addTaskForDate(date, taskText) {
+        if (!taskText.trim()) return;
+        const tasks = getPlanForDate(date);
+        tasks.push({ text: taskText.trim(), status: "pending" });
+        setPlanForDate(date, tasks);
+        renderPlanList(date);
+    }
+    function deleteTaskForDate(date, taskIndex) {
+        let tasks = getPlanForDate(date);
+        tasks.splice(taskIndex, 1);
+        setPlanForDate(date, tasks);
+        renderPlanList(date);
+    }
+    function toggleTaskStatus(date, taskIndex) {
+        let tasks = getPlanForDate(date);
+        const task = tasks[taskIndex];
+        if (!task) return;
+        if (task.status === "pending") task.status = "done";
+        else if (task.status === "done") task.status = "failed";
+        else task.status = "pending";
+        setPlanForDate(date, tasks);
+        renderPlanList(date);
+    }
+    function escapeHtml(str) {
+        return str.replace(/[&<>]/g, function(m) {
+            if (m === '&') return '&amp;';
+            if (m === '<') return '&lt;';
+            if (m === '>') return '&gt;';
+            return m;
+        });
+    }
+
+    let currentPlanDate = '';
+
+    function renderPlanList(date) {
+        const tasks = getPlanForDate(date);
+        const container = document.getElementById('planListContainer');
+        document.getElementById('planDateDisplay').innerHTML = `📅 ${date}`;
+        if (!tasks.length) {
+            container.innerHTML = '<li class="empty-plan">✨ 今天还没有计划，添加一条吧~</li>';
+            return;
+        }
+        const ul = document.createElement('ul');
+        ul.className = 'plan-list';
+        tasks.forEach((task, idx) => {
+            const li = document.createElement('li');
+            li.className = `plan-item ${task.status}`;
+            li.innerHTML = `
+                <span class="task-text">${escapeHtml(task.text)}</span>
+                <button class="delete-plan-btn" data-index="${idx}">🗑️</button>
+            `;
+            li.addEventListener('click', (e) => {
+                if (e.target.classList.contains('delete-plan-btn')) return;
+                toggleTaskStatus(date, idx);
+            });
+            const delBtn = li.querySelector('.delete-plan-btn');
+            delBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                deleteTaskForDate(date, idx);
+            });
+            ul.appendChild(li);
+        });
+        container.innerHTML = '';
+        container.appendChild(ul);
+    }
+
+    function renderCompareView(centerDate, offset = 3) {
+        const container = document.getElementById('scrollContainer');
+        if (!container) return;
+        container.innerHTML = '';
+        const dates = [];
+        for (let i = -offset; i <= offset; i++) {
+            const d = new Date(centerDate);
+            d.setDate(d.getDate() + i);
+            const dateStr = d.toISOString().slice(0,10);
+            dates.push(dateStr);
+        }
+        for (let date of dates) {
+            const tasks = getPlanForDate(date);
+            const total = tasks.length;
+            const doneCount = tasks.filter(t => t.status === 'done').length;
+            const failedCount = tasks.filter(t => t.status === 'failed').length;
+            const pendingCount = total - doneCount - failedCount;
+            const percent = total === 0 ? 0 : (doneCount / total * 100);
+            const card = document.createElement('div');
+            card.className = 'compare-card';
+            card.innerHTML = `
+                <div style="font-weight: 700; margin-bottom: 8px;">📆 ${date}</div>
+                <div style="font-size:0.8rem; margin-bottom: 8px;">✅ 完成 ${doneCount} / ${total}</div>
+                <div class="progress-bar-bg"><div class="progress-fill" style="width: ${percent}%;"></div></div>
+                <div style="display: flex; gap: 8px; margin-bottom: 12px;">
+                    <span style="background:#e6f7ec; padding:2px 6px; border-radius:20px;">✔️${doneCount}</span>
+                    <span style="background:#ffe6e5; padding:2px 6px; border-radius:20px;">❌${failedCount}</span>
+                    <span style="background:#f1f5f9; padding:2px 6px; border-radius:20px;">⏳${pendingCount}</span>
+                </div>
+                <button class="view-date-btn" data-date="${date}" style="background:#fff; border:1px solid #2b7a62; color:#2b7a62; padding:4px 12px; border-radius:40px; font-size:0.75rem; cursor:pointer;">查看详情</button>
+            `;
+            container.appendChild(card);
+        }
+        // 绑定查看按钮事件
+        document.querySelectorAll('.view-date-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const targetDate = btn.getAttribute('data-date');
+                if (targetDate) {
+                    // 切换回单日视图
+                    document.getElementById('singleDayView').style.display = 'block';
+                    document.getElementById('compareView').style.display = 'none';
+                    document.getElementById('switchViewBtn').innerText = '⇄ 横向对比';
+                    // 同步全局日期
+                    document.getElementById('logDate').value = targetDate;
+                    updatePlanDate(targetDate);
+                    updatePreview();
+                }
+            });
+        });
+    }
+
+    function updatePlanDate(newDate) {
+        currentPlanDate = newDate;
+        document.getElementById('logDate').value = newDate;
+        document.getElementById('planDateDisplay').innerHTML = `📅 ${newDate}`;
+        renderPlanList(newDate);
+        const compareView = document.getElementById('compareView');
+        if (compareView.style.display !== 'none') {
+            renderCompareView(newDate, 3);
+        }
+        updatePreview();
+    }
+
+    function changeDate(delta) {
+        if (!currentPlanDate) currentPlanDate = document.getElementById('logDate').value;
+        const newDate = new Date(currentPlanDate);
+        newDate.setDate(newDate.getDate() + delta);
+        const newDateStr = newDate.toISOString().slice(0,10);
+        updatePlanDate(newDateStr);
+    }
+
+    function toggleView() {
+        const singleView = document.getElementById('singleDayView');
+        const compareView = document.getElementById('compareView');
+        const switchBtn = document.getElementById('switchViewBtn');
+        if (singleView.style.display === 'none') {
+            singleView.style.display = 'block';
+            compareView.style.display = 'none';
+            switchBtn.innerText = '⇄ 横向对比';
+            renderPlanList(currentPlanDate);
+        } else {
+            singleView.style.display = 'none';
+            compareView.style.display = 'block';
+            switchBtn.innerText = '📅 详细视图';
+            renderCompareView(currentPlanDate, 3);
+        }
+    }
+
+    function initPlans() {
+        const topDatePicker = document.getElementById('logDate');
+        let initialDate = topDatePicker.value;
+        if (!initialDate) {
+            initialDate = todayStr();
+            topDatePicker.value = initialDate;
+        }
+        currentPlanDate = initialDate;
+        document.getElementById('planDateDisplay').innerHTML = `📅 ${currentPlanDate}`;
+        renderPlanList(currentPlanDate);
+        
+        document.getElementById('prevDayBtn').addEventListener('click', () => changeDate(-1));
+        document.getElementById('nextDayBtn').addEventListener('click', () => changeDate(1));
+        document.getElementById('addPlanBtn').addEventListener('click', () => {
+            const newText = document.getElementById('newPlanText').value;
+            if (!newText.trim()) { alert('请输入计划内容'); return; }
+            addTaskForDate(currentPlanDate, newText);
+            document.getElementById('newPlanText').value = '';
+        });
+        document.getElementById('newPlanText').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') document.getElementById('addPlanBtn').click();
+        });
+        document.getElementById('switchViewBtn').addEventListener('click', toggleView);
+        document.getElementById('backToSingleBtn').addEventListener('click', () => {
+            document.getElementById('singleDayView').style.display = 'block';
+            document.getElementById('compareView').style.display = 'none';
+            document.getElementById('switchViewBtn').innerText = '⇄ 横向对比';
+            renderPlanList(currentPlanDate);
+        });
+        topDatePicker.addEventListener('change', () => {
+            const newDate = topDatePicker.value;
+            if (newDate && newDate !== currentPlanDate) {
+                updatePlanDate(newDate);
+            }
+        });
+    }
+
+    // ========== 整体初始化 ==========
     function bindEvents() {
         document.getElementById('saveBtn').addEventListener('click', saveCurrentLog);
         document.getElementById('resetBtn').addEventListener('click', resetFormToToday);
-        // 所有输入控件变化时更新预览
         const inputs = ['sport', 'sleep', 'bedtime', 'mealCount', 'fruitMilk', 'study', 'hobbyMin'];
         inputs.forEach(id => {
             const el = document.getElementById(id);
@@ -856,6 +1230,7 @@
         refreshChart();
         document.getElementById('dailyViewBtn').style.background = '#2b7a62';
         document.getElementById('dailyViewBtn').style.color = 'white';
+        initPlans();
     }
     init();
 </script>
