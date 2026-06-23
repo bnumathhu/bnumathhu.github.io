@@ -1,0 +1,1196 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="P2P 国际跳棋 · 远程对弈                                            * {             box-sizing: border-box;             font-family: system-ui, &#39;Segoe UI&#39;, Roboto, sans-serif;         }">
+<meta property="og:type" content="website">
+<meta property="og:title" content="page.title">
+<meta property="og:url" content="http://example.com/games/draughts.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="P2P 国际跳棋 · 远程对弈                                            * {             box-sizing: border-box;             font-family: system-ui, &#39;Segoe UI&#39;, Roboto, sans-serif;         }">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-06-23T13:47:49.097Z">
+<meta property="article:modified_time" content="2026-06-23T13:12:35.587Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>page.title - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"expand_all":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"openkounter":{"server_url":"https://open-kounter.mintimate.cn","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Ceres</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content (desktop) -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/checkin/" target="_self">
+                <i class="iconfont icon-calendar-fill"></i>
+                <span>每日生活速报</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/ebooks/" target="_self">
+                <i class="iconfont icon-calendar-fill"></i>
+                <span>books</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/games/" target="_self">
+                <i class="iconfont icon-game"></i>
+                <span>游戏，番和剧</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile grid menu overlay -->
+<div id="mobile-grid-menu" class="d-lg-none">
+  <div class="mobile-grid-menu-inner">
+    <div class="container">
+      <div class="row">
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-home-fill"></i>
+                  <span>首页</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/archives/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-archive-fill"></i>
+                  <span>归档</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/categories/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-category-fill"></i>
+                  <span>分类</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/tags/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-tags-fill"></i>
+                  <span>标签</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/about/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-user-fill"></i>
+                  <span>关于</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/checkin/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-calendar-fill"></i>
+                  <span>每日生活速报</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/ebooks/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-calendar-fill"></i>
+                  <span>books</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/games/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-game"></i>
+                  <span>游戏，番和剧</span>
+                </div>
+              </a>
+            </div>
+          
+        
+        
+          <div class="col-4 mobile-grid-cell" id="mobile-search-btn">
+            <a href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-search"></i>
+                <span>搜索</span>
+              </div>
+            </a>
+          </div>
+        
+        
+          <div class="col-4 mobile-grid-cell" id="mobile-color-toggle-btn"
+               data-label-light="开灯"
+               data-label-dark="关灯">
+            <a href="javascript:;" aria-label="Color Toggle">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-dark" id="mobile-color-toggle-icon"></i>
+                <span id="mobile-color-toggle-label">关灯</span>
+              </div>
+            </a>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="page.title"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<article class="page-content">
+  <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P2P 国际跳棋 · 远程对弈</title>
+    <!-- 引入 draughts.js 处理棋规 (10x10 国际跳棋) -->
+    <script src="https://cdn.jsdelivr.net/npm/draughts@0.2.1/dist/draughts.min.js">
+    </script>
+    <!-- 引入 PeerJS 简化 WebRTC 连接 -->
+    <script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.2/dist/peerjs.min.js">
+    </script>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+        }
+        body {
+            min-height: 100vh;
+            margin: 0;
+            background: #1a1a2e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .game-container {
+            background: #16213e;
+            border-radius: 28px;
+            padding: 30px 35px 35px 35px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            max-width: 700px;
+            width: 100%;
+        }
+        h2 {
+            text-align: center;
+            margin: 0 0 4px 0;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #e0e0e0;
+            font-size: 1.7rem;
+        }
+        .sub {
+            text-align: center;
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-top: -4px;
+            margin-bottom: 14px;
+        }
+        /* 棋盘包装 */
+        .board-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 14px;
+        }
+        #draughts-board {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            width: 100%;
+            aspect-ratio: 1/1;
+            max-width: 560px;
+            border: 4px solid #8B7355;
+            border-radius: 6px;
+            overflow: hidden;
+            background: #f0d9b5;
+            box-shadow: 0 8px 0 #4a3b2b;
+        }
+        .square {
+            aspect-ratio: 1/1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.4rem;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.1s;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            font-family: "Segoe UI Symbol", "Arial Unicode MS", sans-serif;
+        }
+        .square.light {
+            background: #f0d9b5;
+        }
+        .square.dark {
+            background: #b58863;
+        }
+        .square.selected {
+            background: #7fc97f !important;
+            box-shadow: inset 0 0 0 3px #2a7a2a;
+        }
+        .square.valid-move {
+            background: #b8d9b0 !important;
+            box-shadow: inset 0 0 0 3px #4c8b4c;
+        }
+        /* 状态 & 控制区 */
+        .status-area {
+            background: #0f3460;
+            border-radius: 40px;
+            padding: 12px 20px;
+            margin: 6px 0 14px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            color: #eee;
+            font-weight: 500;
+        }
+        #status-text {
+            font-size: 0.95rem;
+            background: #1a1a40;
+            padding: 5px 16px;
+            border-radius: 40px;
+            color: #c7e9ff;
+        }
+        .btn-group {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            background: #e94560;
+            border: none;
+            color: white;
+            font-weight: 600;
+            font-size: 0.8rem;
+            padding: 6px 16px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: 0.15s;
+            box-shadow: 0 4px 0 #a0223e;
+            letter-spacing: 0.3px;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.1);
+        }
+        .btn:active {
+            transform: translateY(3px);
+            box-shadow: 0 1px 0 #a0223e;
+        }
+        .btn.secondary {
+            background: #533483;
+            box-shadow: 0 4px 0 #3a1f5e;
+        }
+        .btn.success {
+            background: #1b9e5e;
+            box-shadow: 0 4px 0 #0f6b40;
+        }
+        .peer-section {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            background: #0f3460;
+            border-radius: 40px;
+            padding: 14px 20px;
+            margin-bottom: 4px;
+        }
+        .peer-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .peer-row label {
+            color: #ccc;
+            font-weight: 500;
+            min-width: 70px;
+        }
+        .peer-row input {
+            flex: 1;
+            min-width: 140px;
+            padding: 8px 14px;
+            border-radius: 40px;
+            border: none;
+            background: #1a1a40;
+            color: white;
+            font-size: 0.9rem;
+            outline: 1px solid #3a3a6a;
+        }
+        .peer-row input:focus {
+            outline: 2px solid #e94560;
+        }
+        .peer-row .btn {
+            padding: 6px 18px;
+            font-size: 0.8rem;
+        }
+        .footnote {
+            text-align: center;
+            color: #777;
+            font-size: 0.7rem;
+            margin-top: 12px;
+            border-top: 1px solid #2a2a4a;
+            padding-top: 12px;
+        }
+        @media (max-width: 500px) {
+            .game-container {
+                padding: 16px;
+            }
+            .square {
+                font-size: 1.6rem;
+            }
+            .status-area {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+            }
+            .btn-group {
+                justify-content: center;
+            }
+            .peer-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h2>♟ 远程国际跳棋</h2>
+        <div class="sub">10×10 百格 · 基于 WebRTC 点对点直连</div>
+
+        <!-- 棋盘 -->
+        <div class="board-wrapper">
+            <div id="draughts-board"></div>
+        </div>
+
+        <!-- 状态栏 -->
+        <div class="status-area">
+            <span id="status-text">⚪ 等待连接...</span>
+            <div class="btn-group">
+                <button class="btn secondary" id="btn-reset">↻ 新游戏</button>
+                <button class="btn" id="btn-flip">🔄 翻转棋盘</button>
+            </div>
+        </div>
+
+        <!-- Peer 连接控制 -->
+        <div class="peer-section">
+            <div class="peer-row">
+                <label>🔗 我的ID</label>
+                <input type="text" id="my-id" readonly>
+                <button class="btn success" id="btn-copy">复制</button>
+            </div>
+            <div class="peer-row">
+                <label>📞 对方ID</label>
+                <input type="text" id="peer-id" placeholder="输入对方的 ID">
+                <button class="btn" id="btn-connect">连接</button>
+            </div>
+        </div>
+
+        <div class="footnote">
+            ⚡ 双方都打开此页面 → 复制自己的ID给对方 → 输入对方ID点击连接
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            // ---------- 游戏状态 ----------
+            // 使用 draughts.js 库 (10x10 国际跳棋)
+            const draughts = new Draughts();
+            let boardElement = document.getElementById('draughts-board');
+            const statusText = document.getElementById('status-text');
+
+            // UI 状态
+            let selectedSquare = null; // 存储为 1-50 的数字
+            let validMoves = [];
+            let boardFlipped = false;
+            let myColor = 'w'; // 'w' 或 'b'
+            let isMyTurn = false;
+            let gameOver = false;
+            let moveHistory = []; // 用于悔棋
+
+            // PeerJS 相关
+            let peer = null;
+            let conn = null;
+            let myId = '';
+
+            // DOM 元素
+            const myIdInput = document.getElementById('my-id');
+            const peerIdInput = document.getElementById('peer-id');
+            const btnConnect = document.getElementById('btn-connect');
+            const btnCopy = document.getElementById('btn-copy');
+            const btnReset = document.getElementById('btn-reset');
+            const btnFlip = document.getElementById('btn-flip');
+
+            // ---------- 工具：行列 <-> 方格编号 (1-50) ----------
+            // 10x10 棋盘，只使用深色格 (黑格)
+            // 方格编号规则：从白方视角 (底部)，从左到右，从下到上
+            // 行 0 (底部) 对应编号 46-50? 实际上 draughts.js 使用 1-50
+            // 标准编号：行从底部 (1) 到顶部 (10)，列从左 (a) 到右 (j)
+            // 编号: 1=底部最左黑格, 10=底部最右黑格? 实际上:
+            // 底部行 (rank 1): 黑格在列 1,3,5,7,9 -> 编号 1,2,3,4,5?
+            // 更准确: draughts.js 使用 1-50, 从白方视角左下角开始编号
+            // 1: 行1列1(黑格), 2: 行1列3(黑格), ..., 5: 行1列9(黑格)
+            // 6: 行2列2(黑格), 7: 行2列4(黑格), ..., 10: 行2列10(黑格)
+            // 以此类推... 50: 行10列10(黑格)
+            // 我们只需要一个转换函数：行列 (0-9) -> 编号 (1-50)
+            function rowColToSquare(row, col) {
+                // row: 0=底部 (白方), 9=顶部 (黑方)
+                // col: 0=左, 9=右
+                // 只处理黑格: (row + col) % 2 === 1 (因为从0,0开始是白格)
+                if ((row + col) % 2 === 0) return null; // 白格无棋子
+                // 计算编号: 从底部开始，每行5个黑格
+                // 行0 (底部): 黑格在 col=1,3,5,7,9 -> 编号 1-5
+                // 行1: 黑格在 col=0,2,4,6,8 -> 编号 6-10
+                const rankFromBottom = 9 - row; // 0=底部
+                const blackIndex = Math.floor(col / 2); // 该行中第几个黑格 (0-4)
+                // 如果 col 是偶数，黑格在行中的索引是 col/2
+                // 如果 col 是奇数，黑格在行中的索引是 (col-1)/2
+                const idx = Math.floor(col / 2);
+                return rankFromBottom * 5 + idx + 1;
+            }
+
+            function squareToRowCol(square) {
+                // 编号 1-50 -> {row, col}
+                const idx = square - 1;
+                const rankFromBottom = Math.floor(idx / 5);
+                const blackIdx = idx % 5;
+                const row = 9 - rankFromBottom;
+                // 黑格在该行的列位置: 如果 rankFromBottom 是偶数 (从0开始), 黑格在奇数列 (1,3,5,7,9)
+                // 如果 rankFromBottom 是奇数, 黑格在偶数列 (0,2,4,6,8)
+                let col;
+                if (rankFromBottom % 2 === 0) {
+                    col = blackIdx * 2 + 1;
+                } else {
+                    col = blackIdx * 2;
+                }
+                return { row, col };
+            }
+
+            // ---------- 棋盘渲染 ----------
+            function renderBoard() {
+                boardElement.innerHTML = '';
+                // 获取当前棋盘状态 (FEN 或直接遍历)
+                // draughts.js 没有直接的 board() 方法，我们用 ascii 或遍历?
+                // 可以使用 get(square) 方法
+                const rows = boardFlipped ? [9, 8, 7, 6, 5, 4, 3, 2, 1, 0] : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+                for (let r of rows) {
+                    for (let c = 0; c < 10; c++) {
+                        const square = document.createElement('div');
+                        const isLight = (r + c) % 2 === 0;
+                        square.className = `square ${isLight ? 'light' : 'dark'}`;
+                        const sqNum = rowColToSquare(r, c);
+                        square.dataset.square = sqNum;
+
+                        if (sqNum !== null) {
+                            const piece = draughts.get(sqNum);
+                            if (piece) {
+                                // piece: 'w' 或 'b' 或 'W' 或 'B' (王)
+                                const isKing = piece === piece.toUpperCase();
+                                const color = piece.toLowerCase();
+                                // Unicode 棋子: 白兵 ⚪? 用标准跳棋符号
+                                // 白兵: ⛂? 实际上用 ◯ 和 ● 或者专用符号
+                                // 使用 Unicode: 白兵 ⛀, 白王 ⛁, 黑兵 ⛂, 黑王 ⛃
+                                // 或者使用更通用的: 白⚪ 黑⚫
+                                // 这里使用圆点+圆圈表示
+                                let symbol = '';
+                                if (color === 'w') {
+                                    symbol = isKing ? '⛁' : '⛀';
+                                } else {
+                                    symbol = isKing ? '⛃' : '⛂';
+                                }
+                                // 备选: 如果浏览器不支持, 用 W/B 表示
+                                // 实际上大多数浏览器支持这些符号
+                                square.textContent = symbol;
+                            }
+                        }
+
+                        // 高亮选中的格子
+                        if (selectedSquare === sqNum) {
+                            square.classList.add('selected');
+                        }
+                        // 高亮合法走法
+                        if (validMoves.some(m => m.to === sqNum)) {
+                            square.classList.add('valid-move');
+                        }
+
+                        square.addEventListener('click', () => onSquareClick(sqNum));
+                        boardElement.appendChild(square);
+                    }
+                }
+                updateStatus();
+            }
+
+            // ---------- 更新状态文字 ----------
+            function updateStatus() {
+                if (gameOver) {
+                    // 检查谁赢了
+                    const turn = draughts.turn();
+                    const winner = turn === 'w' ? '黑方' : '白方';
+                    statusText.textContent = `🏆 ${winner}胜！`;
+                    return;
+                }
+
+                const turn = draughts.turn() === 'w' ? '白方' : '黑方';
+                const myTurnHint = (draughts.turn() === myColor) ? ' (你的回合)' : ' (对手回合)';
+                let status = `⚫ ${turn}走棋${myTurnHint}`;
+                statusText.textContent = status;
+                isMyTurn = (draughts.turn() === myColor);
+            }
+
+            // ---------- 走棋逻辑 ----------
+            function onSquareClick(sqNum) {
+                if (gameOver) return;
+                if (!isMyTurn) return;
+                if (sqNum === null) return;
+
+                // 如果点击的是已经选中的格子 -> 取消选中
+                if (selectedSquare === sqNum) {
+                    clearSelection();
+                    renderBoard();
+                    return;
+                }
+
+                // 如果点击的是合法走法目标 -> 走棋
+                const targetMove = validMoves.find(m => m.to === sqNum);
+                if (targetMove) {
+                    const result = draughts.move({ from: selectedSquare, to: sqNum });
+                    if (result) {
+                        moveHistory.push(result);
+                        clearSelection();
+                        renderBoard();
+                        // 发送走法给对方
+                        if (conn && conn.open) {
+                            conn.send({
+                                type: 'move',
+                                from: result.from,
+                                to: result.to
+                            });
+                        }
+                        if (draughts.gameOver()) {
+                            gameOver = true;
+                            renderBoard();
+                        }
+                        return;
+                    } else {
+                        clearSelection();
+                        renderBoard();
+                        return;
+                    }
+                }
+
+                // 点击的是己方棋子 -> 选中并计算合法走法
+                const piece = draughts.get(sqNum);
+                if (piece && piece.toLowerCase() === myColor) {
+                    selectedSquare = sqNum;
+                    const moves = draughts.getLegalMoves(sqNum);
+                    validMoves = moves || [];
+                    renderBoard();
+                } else {
+                    clearSelection();
+                    renderBoard();
+                }
+            }
+
+            function clearSelection() {
+                selectedSquare = null;
+                validMoves = [];
+            }
+
+            // ---------- 重置游戏 ----------
+            function resetGame() {
+                // draughts.js 重置
+                // 重新实例化
+                const newGame = new Draughts();
+                Object.assign(draughts, newGame);
+                gameOver = false;
+                moveHistory = [];
+                clearSelection();
+                renderBoard();
+                if (conn && conn.open) {
+                    conn.send({ type: 'reset' });
+                }
+            }
+
+            // ---------- 翻转棋盘 ----------
+            function flipBoard() {
+                boardFlipped = !boardFlipped;
+                renderBoard();
+            }
+
+            // ---------- 悔棋 ----------
+            function undoMove() {
+                if (!isMyTurn) {
+                    statusText.textContent = '⚠️ 不是你的回合，不能悔棋';
+                    return;
+                }
+                if (moveHistory.length === 0) {
+                    statusText.textContent = 'ℹ️ 没有可悔的棋';
+                    return;
+                }
+                // draughts.js 没有 undo() 方法，需要自己实现
+                // 简单方式: 重新加载 FEN
+                // 由于我们没有存储历史 FEN，这里只做本地撤销最后一步
+                // 更好的方式: 存储每一步的 FEN
+                // 简化: 弹出最后一步，重新加载
+                const lastMove = moveHistory.pop();
+                // 由于 draughts.js 不支持 undo，我们重新从初始状态开始重放
+                // 但这样太复杂，我们使用 FEN 快照
+                // 我们可以在每次移动后保存 FEN
+                // 为了简化，这里只做一个提示
+                statusText.textContent = '⚠️ 国际跳棋暂不支持悔棋 (可重置游戏)';
+                // 实际上可以保存 FEN 历史来实现，但这里先简化
+            }
+
+            // ---------- 处理收到的消息 ----------
+            function handlePeerMessage(data) {
+                if (data.type === 'move') {
+                    const result = draughts.move({ from: data.from, to: data.to });
+                    if (result) {
+                        moveHistory.push(result);
+                        clearSelection();
+                        renderBoard();
+                        if (draughts.gameOver()) {
+                            gameOver = true;
+                            renderBoard();
+                        }
+                    } else {
+                        console.warn('收到非法走法', data);
+                    }
+                } else if (data.type === 'reset') {
+                    resetGame();
+                } else if (data.type === 'role') {
+                    myColor = data.color;
+                    isMyTurn = (draughts.turn() === myColor);
+                    statusText.textContent = `🎯 你执 ${myColor === 'w' ? '白' : '黑'} 棋`;
+                    renderBoard();
+                }
+            }
+
+            // ---------- 初始化 PeerJS ----------
+            function initPeer() {
+                // 自定义 STUN 服务器提高国内连接稳定性
+                const customConfig = {
+                    iceServers: [
+                        { urls: 'stun:stun.qq.com:3478' },
+                        { urls: 'stun:stun1.l.google.com:19302' },
+                        { urls: 'stun:stun2.l.google.com:19302' }
+                    ]
+                };
+
+                peer = new Peer(undefined, {
+                    debug: 0,
+                    config: customConfig
+                });
+
+                peer.on('open', (id) => {
+                    myId = id;
+                    myIdInput.value = id;
+                    statusText.textContent = '🟢 已上线，等待连接...';
+                });
+
+                peer.on('connection', (incomingConn) => {
+                    conn = incomingConn;
+                    setupConnection();
+                    myColor = 'w';
+                    isMyTurn = true;
+                    if (conn.open) {
+                        conn.send({ type: 'role', color: 'b' });
+                    }
+                    statusText.textContent = '🤝 已连接！你执白棋';
+                    renderBoard();
+                });
+
+                peer.on('error', (err) => {
+                    console.error('Peer error:', err);
+                    if (err.type === 'peer-unavailable') {
+                        statusText.textContent = '❌ 对方ID无效或离线';
+                    }
+                });
+            }
+
+            // ---------- 设置连接 ----------
+            function setupConnection() {
+                if (!conn) return;
+                conn.on('open', () => {
+                    statusText.textContent = '📡 连接已建立';
+                });
+                conn.on('data', (data) => {
+                    handlePeerMessage(data);
+                });
+                conn.on('close', () => {
+                    statusText.textContent = '🔴 连接已断开';
+                    conn = null;
+                });
+                conn.on('error', (err) => {
+                    console.error('Connection error:', err);
+                });
+            }
+
+            // ---------- 连接到对方 ----------
+            function connectToPeer(peerId) {
+                if (!peer) {
+                    statusText.textContent = '⚠️ 请等待页面初始化';
+                    return;
+                }
+                if (conn && conn.open) {
+                    conn.close();
+                }
+                const newConn = peer.connect(peerId, {
+                    reliable: true
+                });
+                conn = newConn;
+                setupConnection();
+                myColor = 'b';
+                isMyTurn = false;
+                conn.on('open', () => {
+                    conn.send({ type: 'role', color: 'w' });
+                    statusText.textContent = '🤝 已连接！你执黑棋';
+                    renderBoard();
+                });
+                setTimeout(() => {
+                    if (conn && !conn.open) {
+                        statusText.textContent = '⏳ 连接超时，请检查ID';
+                    }
+                }, 5000);
+            }
+
+            // ---------- 复制ID ----------
+            function copyMyId() {
+                const id = myIdInput.value;
+                if (id) {
+                    navigator.clipboard.writeText(id).then(() => {
+                        statusText.textContent = '✅ 已复制ID';
+                        setTimeout(() => updateStatus(), 1500);
+                    }).catch(() => {
+                        myIdInput.select();
+                        document.execCommand('copy');
+                        statusText.textContent = '✅ 已复制ID';
+                        setTimeout(() => updateStatus(), 1500);
+                    });
+                }
+            }
+
+            // ---------- 事件绑定 ----------
+            btnConnect.addEventListener('click', () => {
+                const id = peerIdInput.value.trim();
+                if (!id) {
+                    statusText.textContent = '⚠️ 请输入对方ID';
+                    return;
+                }
+                connectToPeer(id);
+            });
+
+            btnCopy.addEventListener('click', copyMyId);
+            btnReset.addEventListener('click', resetGame);
+            btnFlip.addEventListener('click', flipBoard);
+
+            peerIdInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    btnConnect.click();
+                }
+            });
+
+            // ---------- 启动 ----------
+            initPeer();
+            renderBoard();
+            statusText.textContent = '⏳ 初始化...';
+
+            window.addEventListener('beforeunload', () => {
+                if (conn) conn.close();
+                if (peer) peer.destroy();
+            });
+
+        })();
+    </script>
+</body>
+</html>
+
+  
+
+</article>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

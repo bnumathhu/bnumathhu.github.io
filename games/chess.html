@@ -1,0 +1,1129 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="P2P 国际象棋 · 远程对弈                                             &#x2F;* 全局样式 *&#x2F;         * {             box-sizing: border-box;             font-family: system-ui, &#39;Segoe UI&#39;, Roboto, sans-ser">
+<meta property="og:type" content="website">
+<meta property="og:title" content="page.title">
+<meta property="og:url" content="http://example.com/games/chess.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="P2P 国际象棋 · 远程对弈                                             &#x2F;* 全局样式 *&#x2F;         * {             box-sizing: border-box;             font-family: system-ui, &#39;Segoe UI&#39;, Roboto, sans-ser">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-06-23T13:47:20.206Z">
+<meta property="article:modified_time" content="2026-06-23T13:06:52.730Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>page.title - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"expand_all":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"openkounter":{"server_url":"https://open-kounter.mintimate.cn","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 60vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Ceres</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content (desktop) -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/checkin/" target="_self">
+                <i class="iconfont icon-calendar-fill"></i>
+                <span>每日生活速报</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/ebooks/" target="_self">
+                <i class="iconfont icon-calendar-fill"></i>
+                <span>books</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/games/" target="_self">
+                <i class="iconfont icon-game"></i>
+                <span>游戏，番和剧</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile grid menu overlay -->
+<div id="mobile-grid-menu" class="d-lg-none">
+  <div class="mobile-grid-menu-inner">
+    <div class="container">
+      <div class="row">
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-home-fill"></i>
+                  <span>首页</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/archives/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-archive-fill"></i>
+                  <span>归档</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/categories/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-category-fill"></i>
+                  <span>分类</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/tags/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-tags-fill"></i>
+                  <span>标签</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/about/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-user-fill"></i>
+                  <span>关于</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/checkin/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-calendar-fill"></i>
+                  <span>每日生活速报</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/ebooks/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-calendar-fill"></i>
+                  <span>books</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/games/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-game"></i>
+                  <span>游戏，番和剧</span>
+                </div>
+              </a>
+            </div>
+          
+        
+        
+          <div class="col-4 mobile-grid-cell" id="mobile-search-btn">
+            <a href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-search"></i>
+                <span>搜索</span>
+              </div>
+            </a>
+          </div>
+        
+        
+          <div class="col-4 mobile-grid-cell" id="mobile-color-toggle-btn"
+               data-label-light="开灯"
+               data-label-dark="关灯">
+            <a href="javascript:;" aria-label="Color Toggle">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-dark" id="mobile-color-toggle-icon"></i>
+                <span id="mobile-color-toggle-label">关灯</span>
+              </div>
+            </a>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="page.title"></span>
+          
+        </div>
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<article class="page-content">
+  <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P2P 国际象棋 · 远程对弈</title>
+    <!-- 引入 Chess.js 处理棋规 -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js">
+    </script>
+    <!-- 引入 PeerJS 简化 WebRTC 连接 -->
+    <script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.2/dist/peerjs.min.js">
+    </script>
+    <style>
+        /* 全局样式 */
+        * {
+            box-sizing: border-box;
+            font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+        }
+        body {
+            min-height: 100vh;
+            margin: 0;
+            background: #1a1a2e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .game-container {
+            background: #16213e;
+            border-radius: 28px;
+            padding: 30px 35px 35px 35px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            max-width: 650px;
+            width: 100%;
+            transition: all 0.2s;
+        }
+        h2 {
+            text-align: center;
+            margin: 0 0 12px 0;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #e0e0e0;
+            font-size: 1.7rem;
+        }
+        .sub {
+            text-align: center;
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-top: -6px;
+            margin-bottom: 18px;
+        }
+        /* 棋盘包装 */
+        .board-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+        #chess-board {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            width: 100%;
+            aspect-ratio: 1/1;
+            max-width: 500px;
+            border: 4px solid #b58863;
+            border-radius: 6px;
+            overflow: hidden;
+            background: #b58863;
+            box-shadow: 0 8px 0 #4a3b2b;
+        }
+        .square {
+            aspect-ratio: 1/1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.8rem;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.1s;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .square.light {
+            background: #f0d9b5;
+        }
+        .square.dark {
+            background: #b58863;
+        }
+        .square.selected {
+            background: #7fc97f !important;
+            box-shadow: inset 0 0 0 3px #2a7a2a;
+        }
+        .square.valid-move {
+            background: #b8d9b0 !important;
+            box-shadow: inset 0 0 0 3px #4c8b4c;
+        }
+        /* 状态 & 控制区 */
+        .status-area {
+            background: #0f3460;
+            border-radius: 40px;
+            padding: 14px 24px;
+            margin: 8px 0 18px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            color: #eee;
+            font-weight: 500;
+        }
+        #status-text {
+            font-size: 1rem;
+            background: #1a1a40;
+            padding: 6px 18px;
+            border-radius: 40px;
+            color: #c7e9ff;
+        }
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            background: #e94560;
+            border: none;
+            color: white;
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 8px 18px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: 0.15s;
+            box-shadow: 0 4px 0 #a0223e;
+            letter-spacing: 0.3px;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.1);
+        }
+        .btn:active {
+            transform: translateY(3px);
+            box-shadow: 0 1px 0 #a0223e;
+        }
+        .btn.secondary {
+            background: #533483;
+            box-shadow: 0 4px 0 #3a1f5e;
+        }
+        .btn.success {
+            background: #1b9e5e;
+            box-shadow: 0 4px 0 #0f6b40;
+        }
+        .peer-section {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            background: #0f3460;
+            border-radius: 40px;
+            padding: 14px 20px;
+            margin-bottom: 6px;
+        }
+        .peer-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .peer-row label {
+            color: #ccc;
+            font-weight: 500;
+            min-width: 70px;
+        }
+        .peer-row input {
+            flex: 1;
+            min-width: 140px;
+            padding: 8px 14px;
+            border-radius: 40px;
+            border: none;
+            background: #1a1a40;
+            color: white;
+            font-size: 0.9rem;
+            outline: 1px solid #3a3a6a;
+        }
+        .peer-row input:focus {
+            outline: 2px solid #e94560;
+        }
+        .peer-row .btn {
+            padding: 8px 20px;
+            font-size: 0.8rem;
+        }
+        .footnote {
+            text-align: center;
+            color: #777;
+            font-size: 0.75rem;
+            margin-top: 14px;
+            border-top: 1px solid #2a2a4a;
+            padding-top: 14px;
+        }
+        .footnote a {
+            color: #8ab4f8;
+        }
+        /* 移动端适配 */
+        @media (max-width: 480px) {
+            .game-container {
+                padding: 16px;
+            }
+            .square {
+                font-size: 2rem;
+            }
+            .status-area {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+            }
+            .btn-group {
+                justify-content: center;
+            }
+            .peer-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h2>♚ 远程对弈</h2>
+        <div class="sub">基于 WebRTC</div>
+
+        <!-- 棋盘 -->
+        <div class="board-wrapper">
+            <div id="chess-board"></div>
+        </div>
+
+        <!-- 状态栏 -->
+        <div class="status-area">
+            <span id="status-text">⚪ 等待连接...</span>
+            <div class="btn-group">
+                <button class="btn secondary" id="btn-reset">↻ 新游戏</button>
+                <button class="btn" id="btn-flip">🔄 翻转棋盘</button>
+            </div>
+        </div>
+
+        <!-- Peer 连接控制 -->
+        <div class="peer-section">
+            <div class="peer-row">
+                <label>🔗 我的ID</label>
+                <input type="text" id="my-id" readonly>
+                <button class="btn success" id="btn-copy">复制</button>
+            </div>
+            <div class="peer-row">
+                <label>📞 对方ID</label>
+                <input type="text" id="peer-id" placeholder="输入对方的 ID">
+                <button class="btn" id="btn-connect">连接</button>
+            </div>
+        </div>
+
+        <div class="footnote">
+            ⚡ 双方都打开此页面 → 复制自己的ID给对方 → 输入对方ID点击连接
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            // ---------- 游戏状态 ----------
+            const chess = new Chess();
+            let boardElement = document.getElementById('chess-board');
+            const statusText = document.getElementById('status-text');
+
+            // UI 状态
+            let selectedSquare = null;
+            let validMoves = [];
+            let boardFlipped = false;
+            let myColor = 'w'; // 'w' 或 'b'，由连接角色决定
+            let isMyTurn = false;
+            let gameOver = false;
+
+            // PeerJS 相关
+            let peer = null;
+            let conn = null;
+            let myId = '';
+
+            // DOM 元素
+            const myIdInput = document.getElementById('my-id');
+            const peerIdInput = document.getElementById('peer-id');
+            const btnConnect = document.getElementById('btn-connect');
+            const btnCopy = document.getElementById('btn-copy');
+            const btnReset = document.getElementById('btn-reset');
+            const btnFlip = document.getElementById('btn-flip');
+
+            // ---------- 棋盘渲染 ----------
+            function renderBoard() {
+                const board = chess.board();
+                boardElement.innerHTML = '';
+                // 根据 flipped 决定遍历顺序
+                const rows = boardFlipped ? [7, 6, 5, 4, 3, 2, 1, 0] : [0, 1, 2, 3, 4, 5, 6, 7];
+                for (let r of rows) {
+                    for (let c = 0; c < 8; c++) {
+                        const square = document.createElement('div');
+                        const col = boardFlipped ? 7 - c : c;
+                        const squareName = String.fromCharCode(97 + col) + (8 - r);
+                        const isLight = (r + col) % 2 === 0;
+                        square.className = `square ${isLight ? 'light' : 'dark'}`;
+                        square.dataset.square = squareName;
+
+                        const piece = board[r][col];
+                            if (piece) {
+                            // 使用 chess.js 的 piece 对象统一接口
+                            const symbol = piece.symbol || piece.type; // 兼容新旧版
+                            const unicode = {
+                            'w': { 'K': '♔', 'Q': '♕', 'R': '♖', 'B': '♗', 'N': '♘', 'P': '♙' },
+                            'b': { 'K': '♚', 'Q': '♛', 'R': '♜', 'B': '♝', 'N': '♞', 'P': '♟' }
+                            };
+                        square.textContent = unicode[piece.color][symbol.toUpperCase()] || '';
+                        }
+
+                        // 高亮选中的格子
+                        if (selectedSquare === squareName) {
+                            square.classList.add('selected');
+                        }
+                        // 高亮合法走法
+                        if (validMoves.includes(squareName)) {
+                            square.classList.add('valid-move');
+                        }
+
+                        square.addEventListener('click', () => onSquareClick(squareName));
+                        boardElement.appendChild(square);
+                    }
+                }
+                updateStatus();
+            }
+
+            // ---------- 更新状态文字 ----------
+            function updateStatus() {
+                if (gameOver) {
+                    if (chess.in_checkmate()) {
+                        const winner = chess.turn() === 'w' ? '黑方' : '白方';
+                        statusText.textContent = `🏆 ${winner}胜！ (将杀)`;
+                    } else if (chess.in_draw()) {
+                        statusText.textContent = '🤝 和棋';
+                    } else {
+                        statusText.textContent = '⏸️ 游戏结束';
+                    }
+                    return;
+                }
+
+                const turn = chess.turn() === 'w' ? '白方' : '黑方';
+                const myTurnHint = (chess.turn() === myColor) ? ' (你的回合)' : ' (对手回合)';
+                let status = `⚫ ${turn}走棋${myTurnHint}`;
+                if (chess.in_check()) status = '❗ ' + status + ' — 将军！';
+                statusText.textContent = status;
+                isMyTurn = (chess.turn() === myColor);
+            }
+
+            // ---------- 走棋逻辑 ----------
+            function onSquareClick(squareName) {
+                if (gameOver) return;
+                if (!isMyTurn) {
+                    // 简单提示，但不影响体验
+                    return;
+                }
+
+                // 如果点击的是已经选中的格子 -> 取消选中
+                if (selectedSquare === squareName) {
+                    clearSelection();
+                    renderBoard();
+                    return;
+                }
+
+                // 如果点击的是合法走法目标 -> 走棋
+                if (validMoves.includes(squareName)) {
+                    const move = { from: selectedSquare, to: squareName, promotion: 'q' }; // 默认升变为后
+                    const result = chess.move(move);
+                    if (result) {
+                        clearSelection();
+                        renderBoard();
+                        // 发送走法给对方
+                        if (conn && conn.open) {
+                            conn.send({
+                                type: 'move',
+                                from: result.from,
+                                to: result.to,
+                                promotion: result.promotion || 'q'
+                            });
+                        }
+                        // 检查游戏是否结束
+                        if (chess.game_over()) {
+                            gameOver = true;
+                            renderBoard();
+                        }
+                        return;
+                    } else {
+                        // 走法非法，清除选中
+                        clearSelection();
+                        renderBoard();
+                        return;
+                    }
+                }
+
+                // 点击的是己方棋子 -> 选中并计算合法走法
+                const piece = chess.get(squareName);
+                if (piece && piece.color === myColor) {
+                    selectedSquare = squareName;
+                    // 计算该棋子的所有合法走法
+                    const moves = chess.moves({ square: squareName, verbose: true });
+                    validMoves = moves.map(m => m.to);
+                    renderBoard();
+                } else {
+                    // 点击空位或对方棋子 -> 清除选中
+                    clearSelection();
+                    renderBoard();
+                }
+            }
+
+            function clearSelection() {
+                selectedSquare = null;
+                validMoves = [];
+            }
+
+            // ---------- 重置游戏 ----------
+            function resetGame() {
+                chess.reset();
+                gameOver = false;
+                clearSelection();
+                renderBoard();
+                // 通知对方重置（如果连接存在）
+                if (conn && conn.open) {
+                    conn.send({ type: 'reset' });
+                }
+            }
+
+            // ---------- 翻转棋盘 ----------
+            function flipBoard() {
+                boardFlipped = !boardFlipped;
+                renderBoard();
+            }
+
+            // ---------- 处理收到的消息 ----------
+            function handlePeerMessage(data) {
+                if (data.type === 'move') {
+                    // 对方走棋
+                    const move = { from: data.from, to: data.to, promotion: data.promotion || 'q' };
+                    const result = chess.move(move);
+                    if (result) {
+                        clearSelection();
+                        renderBoard();
+                        if (chess.game_over()) {
+                            gameOver = true;
+                            renderBoard();
+                        }
+                    } else {
+                        // 走法非法，可能不同步，请求重置？
+                        console.warn('收到非法走法', data);
+                    }
+                } else if (data.type === 'reset') {
+                    resetGame();
+                } else if (data.type === 'role') {
+                    // 角色分配：先连接的为白方
+                    myColor = data.color;
+                    isMyTurn = (chess.turn() === myColor);
+                    statusText.textContent = `🎯 你执 ${myColor === 'w' ? '白' : '黑'} 棋`;
+                    renderBoard();
+                }
+            }
+
+            // ---------- 初始化 PeerJS ----------
+            function initPeer() {
+                peer = new Peer(undefined, {
+                    debug: 0,
+                });
+
+                peer.on('open', (id) => {
+                    myId = id;
+                    myIdInput.value = id;
+                    statusText.textContent = '🟢 已上线，等待连接...';
+                });
+
+                peer.on('connection', (incomingConn) => {
+                    conn = incomingConn;
+                    setupConnection();
+                    // 发起方为白方
+                    myColor = 'w';
+                    isMyTurn = true;
+                    if (conn.open) {
+                        conn.send({ type: 'role', color: 'b' });
+                    }
+                    statusText.textContent = '🤝 已连接！你执白棋';
+                    renderBoard();
+                });
+
+                peer.on('error', (err) => {
+                    console.error('Peer error:', err);
+                    if (err.type === 'peer-unavailable') {
+                        statusText.textContent = '❌ 对方ID无效或离线';
+                    }
+                });
+            }
+
+            // ---------- 设置连接 ----------
+            function setupConnection() {
+                if (!conn) return;
+                conn.on('open', () => {
+                    statusText.textContent = '📡 连接已建立';
+                    // 如果还没分配角色（作为被连接方），对方会发送 role
+                });
+                conn.on('data', (data) => {
+                    handlePeerMessage(data);
+                });
+                conn.on('close', () => {
+                    statusText.textContent = '🔴 连接已断开';
+                    conn = null;
+                });
+                conn.on('error', (err) => {
+                    console.error('Connection error:', err);
+                });
+            }
+
+            // ---------- 连接到对方 ----------
+            function connectToPeer(peerId) {
+                if (!peer) {
+                    statusText.textContent = '⚠️ 请等待页面初始化';
+                    return;
+                }
+                if (conn && conn.open) {
+                    conn.close();
+                }
+                const newConn = peer.connect(peerId, {
+                    reliable: true
+                });
+                conn = newConn;
+                setupConnection();
+                // 被连接方为黑方
+                myColor = 'b';
+                isMyTurn = false;
+                // 发送角色信息
+                conn.on('open', () => {
+                    conn.send({ type: 'role', color: 'w' });
+                    statusText.textContent = '🤝 已连接！你执黑棋';
+                    renderBoard();
+                });
+                // 如果连接立即失败
+                setTimeout(() => {
+                    if (conn && !conn.open) {
+                        statusText.textContent = '⏳ 连接超时，请检查ID';
+                    }
+                }, 5000);
+            }
+
+            // ---------- 复制ID ----------
+            function copyMyId() {
+                const id = myIdInput.value;
+                if (id) {
+                    navigator.clipboard.writeText(id).then(() => {
+                        statusText.textContent = '✅ 已复制ID';
+                        setTimeout(() => updateStatus(), 1500);
+                    }).catch(() => {
+                        // fallback
+                        myIdInput.select();
+                        document.execCommand('copy');
+                        statusText.textContent = '✅ 已复制ID';
+                        setTimeout(() => updateStatus(), 1500);
+                    });
+                }
+            }
+
+            // ---------- 事件绑定 ----------
+            btnConnect.addEventListener('click', () => {
+                const id = peerIdInput.value.trim();
+                if (!id) {
+                    statusText.textContent = '⚠️ 请输入对方ID';
+                    return;
+                }
+                connectToPeer(id);
+            });
+
+            btnCopy.addEventListener('click', copyMyId);
+
+            btnReset.addEventListener('click', resetGame);
+
+            btnFlip.addEventListener('click', flipBoard);
+
+            // 回车触发连接
+            peerIdInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    btnConnect.click();
+                }
+            });
+
+            // ---------- 启动 ----------
+            initPeer();
+            renderBoard();
+            statusText.textContent = '⏳ 初始化...';
+
+            // 清理（虽然不是必须，但好习惯）
+            window.addEventListener('beforeunload', () => {
+                if (conn) conn.close();
+                if (peer) peer.destroy();
+            });
+
+        })();
+    </script>
+</body>
+</html>
+
+  
+
+</article>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
