@@ -1,0 +1,8 @@
+/* 文章正文两端对齐 */
+.markdown-body p,
+.markdown-body li,
+.markdown-body blockquote {
+  text-align: justify;
+  text-justify: inter-ideograph; /* 中文两端对齐更自然 */
+  hyphens: auto;                 /* 英文长单词自动断词，避免间距过大 */
+}
